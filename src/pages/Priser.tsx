@@ -15,37 +15,37 @@ const treatments = [
     title: "Allt för Hår",
     description: "Professionell hårvård med fokus på hälsa och skönhet. Från keratinbehandling till färgning och styling.",
     icon: Scissors,
-    color: "rose"
+    color: "beige"
   },
   {
     title: "Vaxning och Laser",
     description: "Effektiv och skonsam hårborttagning med moderna metoder för långvarigt resultat.",
     icon: Star,
-    color: "lavender"
+    color: "beige"
   },
   {
     title: "Bryn och Fransar",
     description: "Framhäv din naturliga skönhet med våra specialiserade ögon- och brynbehandlingar.",
     icon: Eye,
-    color: "mint"
+    color: "beige"
   },
   {
     title: "Ansiktsbehandlingar",
     description: "Avancerad hudvård och anti-aging behandlingar för strålande resultat.",
     icon: Sparkles,
-    color: "rose"
+    color: "beige"
   },
   {
     title: "Nagelvård",
     description: "Professionell hand- och fotvård med högkvalitativa produkter.",
     icon: Heart,
-    color: "lavender"
+    color: "beige"
   },
   {
     title: "Fettreducering",
     description: "Moderna behandlingar för kroppskonturering och fettreducering.",
     icon: Zap,
-    color: "mint"
+    color: "beige"
   }
 ];
 
@@ -174,7 +174,7 @@ export default function Priser() {
       />
       
       {/* Treatment Categories */}
-      <section className="py-16 bg-neutral-50">
+      <section className="py-16 bg-beige-50">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {treatments.map((treatment, index) => (
@@ -187,11 +187,7 @@ export default function Priser() {
                 </div>
                 
                 <div className="relative">
-                  <div className={`inline-flex items-center justify-center p-3 rounded-lg mb-4 
-                    ${treatment.color === 'rose' ? 'bg-rose-50 text-rose-500' :
-                      treatment.color === 'lavender' ? 'bg-lavender-50 text-lavender-500' :
-                      'bg-mint-50 text-mint-500'}`}
-                  >
+                  <div className="inline-flex items-center justify-center p-3 rounded-lg mb-4 bg-beige-50 text-beige-500">
                     <treatment.icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-light mb-2">{treatment.title}</h3>
@@ -207,13 +203,13 @@ export default function Priser() {
       <section className="py-24">
         <div className="container max-w-5xl">
           {/* Category Filter */}
-          <div className="flex gap-2 overflow-x-auto price-categories-scroll">
+          <div className="flex gap-2 overflow-x-auto price-categories-scroll mb-8">
             <button
               onClick={() => setSelectedCategory(null)}
               className={`px-4 py-2 rounded-full whitespace-nowrap transition-all duration-300
                 ${!selectedCategory 
-                  ? 'bg-rose-500 text-white' 
-                  : 'bg-white text-neutral-600 hover:bg-rose-50'}`}
+                  ? 'bg-beige-500 text-white' 
+                  : 'bg-white text-neutral-600 hover:bg-beige-50'}`}
             >
               Alla
             </button>
@@ -223,8 +219,8 @@ export default function Priser() {
                 onClick={() => setSelectedCategory(category.title)}
                 className={`px-4 py-2 rounded-full whitespace-nowrap transition-all duration-300
                   ${selectedCategory === category.title 
-                    ? 'bg-rose-500 text-white' 
-                    : 'bg-white text-neutral-600 hover:bg-rose-50'}`}
+                    ? 'bg-beige-500 text-white' 
+                    : 'bg-white text-neutral-600 hover:bg-beige-50'}`}
               >
                 {category.title}
               </button>
@@ -232,24 +228,24 @@ export default function Priser() {
           </div>
 
           {/* Price Categories */}
-          <div className="space-y-8 mt-8">
+          <div className="space-y-8">
             {filteredPriceList.map((category, index) => (
               <div 
                 key={index} 
                 className="bg-white rounded-2xl shadow-lg overflow-hidden border border-neutral-100 
                   transform hover:scale-[1.02] transition-all duration-500"
               >
-                <div className="bg-gradient-to-r from-rose-500 to-lavender-500 px-6 py-4">
+                <div className="bg-gradient-to-r from-beige-400 to-beige-500 px-6 py-4">
                   <h2 className="text-xl text-white font-light">{category.title}</h2>
                 </div>
                 <div className="divide-y divide-neutral-100">
                   {category.services.map((service, serviceIndex) => (
                     <div 
                       key={serviceIndex}
-                      className="flex justify-between items-center px-6 py-4 hover:bg-neutral-50 transition-colors duration-200"
+                      className="flex justify-between items-center px-6 py-4 hover:bg-beige-50 transition-colors duration-200"
                     >
                       <span className="text-neutral-700">{service.name}</span>
-                      <span className="text-rose-600 font-medium">{service.price}</span>
+                      <span className="text-beige-500 font-medium">{service.price}</span>
                     </div>
                   ))}
                 </div>

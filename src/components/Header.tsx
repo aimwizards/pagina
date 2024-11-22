@@ -164,14 +164,14 @@ export default function Header() {
 
               <div className="flex items-center gap-4">
                 <a
-                  href="tel:+46123456789"
+                  href="tel:+46760955887"
                   className={`transition-all duration-300 hover:scale-110
                     ${scrolled ? 'text-[#D4B78F] hover:text-[#E6CCAF]' : 'text-white/90 hover:text-white'}`}
                 >
                   <Phone className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/stylingbybrazilstockholm/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-all duration-300 hover:scale-110
@@ -180,7 +180,7 @@ export default function Header() {
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/stylingbybrazil/?locale=sv_SE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-all duration-300 hover:scale-110
