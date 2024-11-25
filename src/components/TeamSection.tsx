@@ -61,7 +61,7 @@ const solnaTeam = [
     slug: "justina-polivoda"
   },
   {
-    name: "Noir T.",
+    name: "Nori",
     title: "Frisör",
     specialties: [
       "Klippning herr",
@@ -70,7 +70,7 @@ const solnaTeam = [
       "Styling fön",
       "Från afro till skandinaviskt hår"
     ],
-    image: "https://static.wixstatic.com/media/8f7788_a6852ed605b44de0afb04181c3fc0306~mv2.jpg/v1/fill/w_600,h_931,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/382D7CFA-A67F-4C3C-AEFE-FC3F26AC132E.jpg",
+    image: "https://static.wixstatic.com/media/8f7788_0430fccd3a574c18803be663095ecb44~mv2.jpg/v1/fill/w_450,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8f7788_0430fccd3a574c18803be663095ecb44~mv2.jpg",
     location: "Solna",
     phone: "070-465 65 13",
     slug: "noir-t"
