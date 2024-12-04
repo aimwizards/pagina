@@ -108,7 +108,11 @@ const priceList: PriceCategory[] = [
       { name: "Laser -Armar (halva)", price: "1655 kr" },
       { name: "LASER: Hela ben", price: "2500 kr" },
       { name: "Laser-halv ben (Lår)", price: "1700 kr" },
-      { name: "Laser Rygg herr", price: "Från 1500 kr" },
+      { name: "Laser Rygg herr", price: "Från 2700 kr" },
+      { name: "Laser Brasiliansk Intim Herr", price: "1800 kr" },
+      { name: "Laser herr bröst+mage+rygg Paket", price: "3800 kr" },
+      { name: "Laser Bröst Herr", price: "2290 kr" },
+      { name: "Laser Rygg Dam/Herr -50%", price: "975 kr" },
       { name: "Laser Intim+rumpa", price: "Från 1000 kr" },
       { name: "Laser Bikinilinjen +hela ben", price: "900 kr" },
       { name: "Laser Lår (framsidan och baksidan)", price: "950 kr" }
