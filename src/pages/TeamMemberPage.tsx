@@ -79,7 +79,7 @@ const teamMembers = {
     bio: "Som Cidesco-diplomerad hudterapeut har Justina en gedigen utbildning och bred erfarenhet inom hudvård och skönhetsbehandlingar. Hon är särskilt erkänd för sitt arbete med ögonbryn och fransar, där hon kombinerar teknisk precision med ett konstnärligt öga för att skapa naturligt vackra resultat. Hennes specialitet ligger i browlift och lashlift behandlingar, där hon hjälper kunder att framhäva sina naturliga drag på bästa sätt."
   },
   'noir-t': {
-    name: "Nori T.",
+    name: "Nori",
     title: "Frisör",
     specialties: [
       "Klippning herr",
