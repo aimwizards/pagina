@@ -70,7 +70,7 @@ const solnaTeam = [
       "Styling fön",
       "Från afro till skandinaviskt hår"
     ],
-    image: "https://static.wixstatic.com/media/8f7788_0430fccd3a574c18803be663095ecb44~mv2.jpg/v1/fill/w_450,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8f7788_0430fccd3a574c18803be663095ecb44~mv2.jpg",
+    image: "https://static.wixstatic.com/media/8f7788_827e9905211647778aefccc98c9c4a86~mv2.jpeg/v1/fill/w_600,h_808,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202024-09-27%20at%2022_01_13.jpeg",
     location: "Solna",
     phone: "070-465 65 13",
     slug: "noir-t"
