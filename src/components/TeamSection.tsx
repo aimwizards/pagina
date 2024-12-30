@@ -30,22 +30,6 @@ const solnaTeam = [
     slug: "rosangela-lima"
   },
   {
-    name: "Tatiana H.",
-    title: "Certifierad Hudterapeut",
-    specialties: [
-      "Ansiktsbehandling",
-      "Laserbehandling",
-      "Massage",
-      "Hudvård",
-      "Kroppsbehandling"
-    ],
-    image: "https://static.wixstatic.com/media/8f7788_69aebb91fd98466a842e6e02e2c6d9c9~mv2.jpg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/thumbnail_f8f820d1-11fb-42fe-9ffd-ae2737.jpg",
-    location: "Solna",
-    phone: "073-441 12 55",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
-    slug: "tatiana-h"
-  },
-  {
     name: "Justina Polivoda",
     title: "Cidesco-diplomerad hudterapeut",
     specialties: [
