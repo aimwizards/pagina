@@ -57,7 +57,7 @@ const solnaTeam = [
     image: "https://static.wixstatic.com/media/8f7788_827e9905211647778aefccc98c9c4a86~mv2.jpeg/v1/fill/w_600,h_808,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202024-09-27%20at%2022_01_13.jpeg",
     location: "Solna",
     phone: "070-465 65 13",
-    slug: "noir-t"
+    slug: "nori"
   }
 ];
 
