@@ -43,7 +43,7 @@ const treatments = [
   {
     title: "Fettreducering",
     description: ["Coolshaping", "Insculpt behandling", "Radio Frequency", "Power shape"],
-    imagePath: "https://le-cdn.website-editor.net/s/46b641d466814eaf94fcb758b99df9d2/dms3rep/multi/opt/fat-freezing-cooltech-2880w.jpg?Expires=1733586389&Signature=l0TnypUXmBFYT-h5T8AlGhH2rBB0-SMlAnez36wbUC5dxBN~IPEyGzJKU0KcpS5hS7U3CHwvGOEcPgjcMdqxKmZKAhBILZA~kfM2N9sGSUCouCdhJTJ2MUNBU4LuY5hsOztXGzTxnpsUeGh1AUTnPLpr11DKJUm7YhaAyXVqHKVAEY9uI~7kdfxG~XhDrTDf5y0rioASoluTmJXW8RD1apx26rESnKJpC-70s3lqP8192zo6K3bO6OoFS9RlvPHiNNoAcfdNxoRPx6YVJzVWYpWRMi90FTm~J6bird4EPdbh-1DaETp3OpdZfnewmN1FeeTyHIK5po~9BiWykEBBZg__&Key-Pair-Id=K2NXBXLF010TJW",
+    imagePath: "https://i0.wp.com/elitebodycontouring.com.au/wp-content/uploads/2022/01/CoolSculpting-vs-CoolShaping-Banner.jpg?fit=2240%2C1260&ssl=1",
     color: "mint"
   }
 ];
