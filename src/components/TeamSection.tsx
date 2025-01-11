@@ -76,21 +76,7 @@ const sodermalmTeam = [
     bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
     slug: "juliana"
   },
-  {
-    name: "Alyna",
-    title: "Nagel- och vaxningsspecialist",
-    specialties: [
-      "Vaxning",
-      "Nagelvård",
-      "Pedikyr",
-      "Manikyr"
-    ],
-    image: "https://static.wixstatic.com/media/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg/v1/fill/w_357,h_600,al_c,q_80,enc_auto/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg",
-    location: "Södermalm",
-    phone: "073-441 12 55",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
-    slug: "alyna"
-  }
+ 
 ];
 
 export default function TeamSection() {
