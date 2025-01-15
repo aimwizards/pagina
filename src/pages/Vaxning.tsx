@@ -14,9 +14,9 @@ export default function Vaxning() {
       <section className="py-24">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-light mb-6">Expertis inom vaxning</h2>
+            <h2 className="text-3xl font-light mb-6">Vaxning i solna</h2>
             <p className="text-neutral-600 leading-relaxed">
-              Med vår expertis inom vaxning erbjuder vi skonsamma och effektiva behandlingar 
+              Med vår expertis inom vaxning i stockholm erbjuder vi skonsamma och effektiva behandlingar 
               för alla hudtyper. Vi använder endast högkvalitativa vaxprodukter och följer 
               de senaste hygienrutinerna för bästa resultat och komfort.
             </p>
