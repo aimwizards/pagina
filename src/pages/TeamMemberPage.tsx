@@ -93,23 +93,7 @@ const teamMembers = {
     phone: "070-465 65 13",
     bio: "Nori är en skicklig frisör med bred expertis inom olika hårtyper och stilar. Med särskild kompetens i att arbeta med allt från afro till skandinaviskt hår, erbjuder hon skräddarsydda lösningar för varje kunds unika behov. Hennes tekniska skicklighet kombinerat med ett kreativt öga gör henne till en mångsidig frisör som kan hantera alla typer av klippningar och stylingar."
   },
-  'juliana': {
-    name: "Juliana",
-    title: "Vaxningsspecialist",
-    specialties: [
-      "Vaxning",
-      "Braziliansk vaxning",
-      "Kroppsvaxning",
-      "Ansiktsvaxning",
-      "Ben- och armvaxning",
-      "Intim vaxning"
-    ],
-    image: "https://static.wixstatic.com/media/8f7788_787c9f7df92e4a07b6539ce497450b97~mv2.jpg/v1/fill/w_600,h_809,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/AD8CC2E9-AB36-4E97-A69F-91B2004E8D50.jpg",
-    location: "Solna",
-    phone: "073-441 12 55",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
-    bio: "Juliana är en högt kvalificerad vaxningsspecialist med över ett decennium av erfarenhet inom professionell hårborttagning. Hon är känd för sin skickliga och skonsamma teknik som minimerar obehag och ger långvariga resultat. Med särskild expertis inom braziliansk vaxning och intim vaxning har hon byggt upp en lojal kundkrets som uppskattar hennes professionalism och noggrannhet. Juliana använder endast premiumvax av högsta kvalitet och följer strikta hygienrutiner för att säkerställa bästa möjliga resultat och kundupplevelse."
-  },
+ 
   'alyna': {
     name: "Alyna",
     title: "Nagel- och vaxningsspecialist",
