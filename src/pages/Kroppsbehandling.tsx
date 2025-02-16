@@ -28,28 +28,28 @@ export default function Kroppsbehandling() {
                 <h3 className="text-2xl font-light mb-4">Våra behandlingar</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Cellulitbehandling</strong>
                       <p className="text-neutral-600">Effektiv behandling som minskar celluliter och förbättrar hudens struktur</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Kroppspeeling</strong>
                       <p className="text-neutral-600">Djuprengörande behandling som ger len och förnyad hud</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Lymfmassage</strong>
                       <p className="text-neutral-600">Stimulerar cirkulationen och minskar svullnad</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Kroppsinpackning</strong>
                       <p className="text-neutral-600">Närande behandling som ger silkeslen hud</p>
@@ -62,23 +62,23 @@ export default function Kroppsbehandling() {
                 <h3 className="text-2xl font-light mb-4">Fördelar</h3>
                 <ul className="space-y-2 text-neutral-600">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Förbättrad blodcirkulation
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Reducerad cellulitbildning
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Fastare och slätare hud
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Minskad vätskeansamling
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Ökad elasticitet i huden
                   </li>
                 </ul>
@@ -100,11 +100,11 @@ export default function Kroppsbehandling() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors duration-300">
+            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors duration-300">
               <Sparkles className="w-5 h-5" />
               Se våra priser
             </a>
-            <a href="/#team-section" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
+            <a href="/boka" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Boka tid
             </a>

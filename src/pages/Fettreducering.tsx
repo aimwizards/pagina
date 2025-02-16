@@ -28,28 +28,28 @@ export default function Fettreducering() {
                 <h3 className="text-2xl font-light mb-4">Behandlingsmetoder</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Coolshaping</strong>
                       <p className="text-neutral-600">Fryser och eliminerar fettceller permanent med kryolipolys</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Radiofrekvens</strong>
                       <p className="text-neutral-600">Värmebehandling som smälter fett och stramar upp huden</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Ultraljud</strong>
                       <p className="text-neutral-600">Målriktad behandling som bryter ner fettceller</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Power Shape</strong>
                       <p className="text-neutral-600">Kombinerad behandling för maximal effekt</p>
@@ -62,23 +62,23 @@ export default function Fettreducering() {
                 <h3 className="text-2xl font-light mb-4">Behandlingsområden</h3>
                 <ul className="space-y-2 text-neutral-600">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Mage och midja
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Lår och höfter
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Överarmar
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Rygg och flanker
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Dubbelhaka
                   </li>
                 </ul>
@@ -88,19 +88,19 @@ export default function Fettreducering() {
                 <h3 className="text-2xl font-light mb-4">Fördelar</h3>
                 <ul className="space-y-2 text-neutral-600">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Inga operativa ingrepp
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Minimal återhämtningstid
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Långvariga resultat
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Förbättrad hudstruktur
                   </li>
                 </ul>
@@ -122,11 +122,11 @@ export default function Fettreducering() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors duration-300">
+            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors duration-300">
               <Sparkles className="w-5 h-5" />
               Se våra priser
             </a>
-            <a href="/#team-section" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
+            <a href="/boka" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Boka tid
             </a>

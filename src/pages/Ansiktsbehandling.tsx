@@ -28,28 +28,28 @@ export default function Ansiktsbehandling() {
                 <h3 className="text-2xl font-light mb-4">Behandlingar</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Anti-aging behandling</strong>
                       <p className="text-neutral-600">Reducerar fina linjer och rynkor, ökar hudens spänst</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Kemisk peeling</strong>
                       <p className="text-neutral-600">Förnyar huden och behandlar pigmentering</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Microneedling</strong>
                       <p className="text-neutral-600">Stimulerar kollagenproduktion och förbättrar hudstruktur</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Djuprengöring</strong>
                       <p className="text-neutral-600">Grundlig rengöring för ren och klar hy</p>
@@ -62,23 +62,23 @@ export default function Ansiktsbehandling() {
                 <h3 className="text-2xl font-light mb-4">Varje behandling inkluderar</h3>
                 <ul className="space-y-2 text-neutral-600">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Hudanalys och konsultation
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Rengöring och peeling
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Ansiktsmassage
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Specialanpassad mask
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Avslutande hudvård
                   </li>
                 </ul>
@@ -100,11 +100,11 @@ export default function Ansiktsbehandling() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors duration-300">
+            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors duration-300">
               <Sparkles className="w-5 h-5" />
               Se våra priser
             </a>
-            <a href="/#team-section" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
+            <a href="/boka" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Boka tid
             </a>

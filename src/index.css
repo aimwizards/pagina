@@ -38,7 +38,7 @@
 /* Price Categories Scrollbar */
 .price-categories-scroll {
   scrollbar-width: thin;
-  scrollbar-color: theme('colors.beige.400') transparent;
+  scrollbar-color: theme('colors.rose.400') transparent;
   padding-bottom: 12px;
 }
 
@@ -52,11 +52,11 @@
 }
 
 .price-categories-scroll::-webkit-scrollbar-thumb {
-  @apply bg-beige-400 rounded-full;
+  @apply bg-rose-400 rounded-full;
 }
 
 .price-categories-scroll::-webkit-scrollbar-thumb:hover {
-  @apply bg-beige-500;
+  @apply bg-rose-500;
 }
 
 /* Animations */
@@ -130,17 +130,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-beige-400 rounded-full;
+  @apply bg-rose-400 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-beige-500;
+  @apply bg-rose-500;
 }
 
 /* Modern scrollbar for team member specialties */
 .scrollbar-modern {
   scrollbar-width: thin;
-  scrollbar-color: theme('colors.beige.400') transparent;
+  scrollbar-color: theme('colors.rose.400') transparent;
 }
 
 .scrollbar-modern::-webkit-scrollbar {
@@ -152,11 +152,11 @@
 }
 
 .scrollbar-modern::-webkit-scrollbar-thumb {
-  @apply bg-beige-400 rounded-full;
+  @apply bg-rose-400 rounded-full;
 }
 
 .scrollbar-modern::-webkit-scrollbar-thumb:hover {
-  @apply bg-beige-500;
+  @apply bg-rose-500;
 }
 
 /* Gradient Backgrounds */

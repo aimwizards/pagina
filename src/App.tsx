@@ -10,6 +10,7 @@ import Vaxning from './pages/Vaxning';
 import Laser from './pages/Laser';
 import Behandlingar from './pages/Behandlingar';
 import Priser from './pages/Priser';
+import Boka from './pages/Boka';
 import TeamMemberPage from './pages/TeamMemberPage';
 import ScrollToTop from './components/ScrollToTop';
 import NewsletterPopup from './components/NewsletterPopup';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/ansiktsbehandling" element={<Ansiktsbehandling />} />
         <Route path="/fettreducering" element={<Fettreducering />} />
         <Route path="/priser" element={<Priser />} />
+        <Route path="/boka" element={<Boka />} />
         <Route path="/team/:slug" element={<TeamMemberPage />} />
       </Routes>
       <Footer />

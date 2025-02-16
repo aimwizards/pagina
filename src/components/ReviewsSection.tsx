@@ -35,7 +35,7 @@ export default function ReviewsSection() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-beige-50 via-white to-beige-100">
+    <section className="py-24 bg-gradient-to-br from-rose-50 via-white to-lavender-50">
       <div className="container max-w-6xl">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ export default function ReviewsSection() {
             onClick={prevReview}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 
               w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center
-              text-neutral-400 hover:text-beige-500 transition-colors duration-300
-              focus:outline-none focus:ring-2 focus:ring-beige-500/20"
+              text-neutral-400 hover:text-rose-500 transition-colors duration-300
+              focus:outline-none focus:ring-2 focus:ring-rose-500/20"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
@@ -72,8 +72,8 @@ export default function ReviewsSection() {
             onClick={nextReview}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12
               w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center
-              text-neutral-400 hover:text-beige-500 transition-colors duration-300
-              focus:outline-none focus:ring-2 focus:ring-beige-500/20"
+              text-neutral-400 hover:text-rose-500 transition-colors duration-300
+              focus:outline-none focus:ring-2 focus:ring-rose-500/20"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -92,7 +92,7 @@ export default function ReviewsSection() {
                 {/* Rating Stars */}
                 <div className="flex justify-center gap-1 mb-6">
                   {[...Array(reviews[currentIndex].rating)].map((_, i) => (
-                    <Star key={i} className="w-6 h-6 fill-beige-400 text-beige-400" />
+                    <Star key={i} className="w-6 h-6 fill-rose-400 text-rose-400" />
                   ))}
                 </div>
 
@@ -114,7 +114,7 @@ export default function ReviewsSection() {
                       onClick={() => setCurrentIndex(index)}
                       className={`w-2 h-2 rounded-full transition-all duration-300 
                         ${index === currentIndex 
-                          ? 'w-8 bg-beige-400' 
+                          ? 'w-8 bg-rose-500' 
                           : 'bg-neutral-200 hover:bg-neutral-300'}`}
                     />
                   ))}

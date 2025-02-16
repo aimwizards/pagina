@@ -19,7 +19,7 @@ const treatments = [
   {
     title: "Vaxning och Laser",
     description: ["Brasiliansk Vaxning", "Laser hårborttaning", "Vaxning av ansikte"],
-    imagePath: "https://static.wixstatic.com/media/8f7788_378fdb67af7a426993f7a89765080f92~mv2.jpg/v1/fill/w_600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/632A9094.jpg",
+    imagePath: "https://images.unsplash.com/photo-1700760933574-9f0f4ea9aa3b?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "lavender"
   },
   {
@@ -43,7 +43,7 @@ const treatments = [
   {
     title: "Fettreducering",
     description: ["Coolshaping", "Insculpt behandling", "Radio Frequency", "Power shape"],
-    imagePath: "https://i0.wp.com/elitebodycontouring.com.au/wp-content/uploads/2022/01/CoolSculpting-vs-CoolShaping-Banner.jpg?fit=2240%2C1260&ssl=1",
+    imagePath: "https://le-cdn.website-editor.net/s/46b641d466814eaf94fcb758b99df9d2/dms3rep/multi/opt/fat-freezing-cooltech-2880w.jpg?Expires=1733586389&Signature=l0TnypUXmBFYT-h5T8AlGhH2rBB0-SMlAnez36wbUC5dxBN~IPEyGzJKU0KcpS5hS7U3CHwvGOEcPgjcMdqxKmZKAhBILZA~kfM2N9sGSUCouCdhJTJ2MUNBU4LuY5hsOztXGzTxnpsUeGh1AUTnPLpr11DKJUm7YhaAyXVqHKVAEY9uI~7kdfxG~XhDrTDf5y0rioASoluTmJXW8RD1apx26rESnKJpC-70s3lqP8192zo6K3bO6OoFS9RlvPHiNNoAcfdNxoRPx6YVJzVWYpWRMi90FTm~J6bird4EPdbh-1DaETp3OpdZfnewmN1FeeTyHIK5po~9BiWykEBBZg__&Key-Pair-Id=K2NXBXLF010TJW",
     color: "mint"
   }
 ];
@@ -86,8 +86,8 @@ export default function Home() {
             >
               <button 
                 onClick={scrollToTeam}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#D4B78F] text-white rounded-full 
-                  hover:bg-[#E6CCAF] transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-rose-500 text-white rounded-full 
+                  hover:bg-rose-600 transition-all duration-300 hover:scale-105"
               >
                 <Calendar className="w-5 h-5" />
                 Boka Tid

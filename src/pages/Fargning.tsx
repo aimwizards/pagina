@@ -28,28 +28,28 @@ export default function Fargning() {
                 <h3 className="text-2xl font-light mb-4">Våra färgtekniker</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Helfärgning</strong>
                       <p className="text-neutral-600">Komplett färgning för en jämn och intensiv färg</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Toning</strong>
                       <p className="text-neutral-600">Subtil färgförändring som ger liv åt håret</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Färgkorrigering</strong>
                       <p className="text-neutral-600">Professionell korrigering av tidigare färgningar</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2"></span>
                     <div>
                       <strong className="block text-neutral-800">Kreativa färgningar</strong>
                       <p className="text-neutral-600">Moderna tekniker för unika färgresultat</p>
@@ -62,23 +62,23 @@ export default function Fargning() {
                 <h3 className="text-2xl font-light mb-4">Vårt färglöfte</h3>
                 <ul className="space-y-2 text-neutral-600">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Konsultation och färganalys ingår
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Ammoniakfria alternativ finns
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Vårdande behandling ingår
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Styling och föning
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
                     Hemvårdsrekommendationer
                   </li>
                 </ul>
@@ -100,11 +100,11 @@ export default function Fargning() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors duration-300">
+            <a href="/priser" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors duration-300">
               <Sparkles className="w-5 h-5" />
               Se våra priser
             </a>
-            <a href="/#team-section" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
+            <a href="/boka" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-rose-500 text-rose-500 rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Boka tid
             </a>
