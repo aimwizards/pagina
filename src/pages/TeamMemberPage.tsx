@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Calendar, MapPin, Phone } from 'lucide-react';
+import { Calendar, MapPin, Phone, ChevronDown } from 'lucide-react';
 
 const teamMembers = {
   'rosangela-lima': {
@@ -23,9 +23,28 @@ const teamMembers = {
       "Celluiliter"
     ],
     image: "https://static.wixstatic.com/media/8f7788_5151a69b73984f2997c10d2746c44d86~mv2.jpg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/eb3c684b-99d1-4490-9028-73719b3a6901_edi.jpg",
-    location: "Solna",
-    phone: "076-095 58 87",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
+    locations: [
+      {
+        name: "Solna",
+        phone: "076-095 58 87",
+        bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
+        schedule: [
+          { day: "Måndag", hours: "16:30 - 20:00" },
+          { day: "Onsdag", hours: "09:30 - 19:00" },
+          { day: "Lördag", hours: "09:00 - 16:00" }
+        ]
+      },
+      {
+        name: "Södermalm",
+        phone: "076-095 58 87",
+        bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
+        schedule: [
+          { day: "Måndag", hours: "10:00 - 15:00" },
+          { day: "Tisdag", hours: "10:00 - 19:00" },
+          { day: "Torsdag", hours: "10:00 - 19:00" }
+        ]
+      }
+    ],
     bio: "Med över två decennier i skönhetsbranschen har Rosangela utvecklat en omfattande expertis inom flera områden. Hon är en mångsidig expert som behärskar allt från avancerad hårvård till kroppsbehandlingar. Hennes specialiteter inkluderar professionell hårfärgning, keratinbehandlingar och slingor för alla hårtyper. Som hudterapeut erbjuder hon skräddarsydda ansiktsbehandlingar och expertis inom laser hårborttagning. Rosangela är även specialiserad på kroppsbehandlingar som inkluderar fettreducering och anti-cellulitbehandlingar. Hennes helhetssyn på skönhet och välbefinnande, kombinerat med hennes tekniska skicklighet, gör henne till en eftertraktad expert för kunder som söker omfattande skönhetslösningar."
   },
   'tatiana-h': {
@@ -34,17 +53,19 @@ const teamMembers = {
     specialties: [
       "Ansiktsbehandling",
       "Laserbehandling",
-      "Massage"
+      "Massage",
+      "Hudvård",
+      "Kroppsbehandling"
     ],
     image: "https://static.wixstatic.com/media/8f7788_69aebb91fd98466a842e6e02e2c6d9c9~mv2.jpg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/thumbnail_f8f820d1-11fb-42fe-9ffd-ae2737.jpg",
     location: "Solna",
-    phone: "076-095 58 87",
+    phone: "073-441 12 55",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
-    bio: "Tatiana är en dedikerad hudterapeut med djupgående kunskap inom hudvård och behandlingar. Hon specialiserar sig på avancerade ansiktsbehandlingar som är skräddarsydda för varje kunds unika hudtyp och behov. Med sin expertis inom laserbehandlingar erbjuder hon effektiva lösningar för olika hudproblem. Hennes massagebehandlingar kombinerar olika tekniker för optimal avslappning och resultat. Tatianas metodiska approach och förmåga att skapa en lugnande behandlingsmiljö gör henne särskilt uppskattad bland kunder som söker både resultat och välbefinnande."
+    bio: "Tatiana är en erfaren och certifierad hudterapeut med specialisering inom avancerade ansiktsbehandlingar och laserterapi. Med sin djupa kunskap om hudens fysiologi och moderna behandlingstekniker erbjuder hon skräddarsydda lösningar för olika hudtillstånd. Hennes expertis omfattar allt från djuprengörande behandlingar till anti-aging och hudföryngrande procedurer."
   },
   'justina-polivoda': {
     name: "Justina Polivoda",
-    title: "Hudterapeut",
+    title: "Cidesco-diplomerad hudterapeut",
     specialties: [
       "Ansiktsbehandling",
       "Ögonbryn",
@@ -55,7 +76,7 @@ const teamMembers = {
     location: "Solna",
     phone: "072-913 70 04",
     bookingUrl: "https://www.bokadirekt.se/places/justina-polivoda-55860",
-    bio: "Justina är en erfaren hudterapeut med särskild expertis inom ögon- och brynbehandlingar. Hon har utvecklat en unik förmåga att skapa naturligt vackra resultat genom sina specialiserade behandlingar. Hennes browlift-behandlingar ger en subtil men märkbar lyftning av ögonbrynen, medan hennes lashlift-teknik framhäver ögonfransarnas naturliga längd och böjning. Som hudterapeut erbjuder hon även skräddarsydda ansiktsbehandlingar som förbättrar hudens struktur och utseende. Justinas noggrannhet och öga för detaljer gör henne till ett utmärkt val för kunder som söker precisa och naturliga resultat."
+    bio: "Som Cidesco-diplomerad hudterapeut har Justina en gedigen utbildning och bred erfarenhet inom hudvård och skönhetsbehandlingar. Hon är särskilt erkänd för sitt arbete med ögonbryn och fransar, där hon kombinerar teknisk precision med ett konstnärligt öga för att skapa naturligt vackra resultat. Hennes specialitet ligger i browlift och lashlift behandlingar, där hon hjälper kunder att framhäva sina naturliga drag på bästa sätt."
   },
   'noir-t': {
     name: "Nori",
@@ -67,20 +88,44 @@ const teamMembers = {
       "Styling fön",
       "Från afro till skandinaviskt hår"
     ],
-    image: "https://static.wixstatic.com/media/8f7788_827e9905211647778aefccc98c9c4a86~mv2.jpeg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202024-09-27%20at%2022_01_13.jpeg",
+    image: "https://static.wixstatic.com/media/8f7788_827e9905211647778aefccc98c9c4a86~mv2.jpeg/v1/fill/w_600,h_808,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202024-09-27%20at%2022_01_13.jpeg",
     location: "Solna",
     phone: "070-465 65 13",
-    bio: "Nori är en skicklig frisör med en unik förmåga att arbeta med alla hårtyper, från skandinaviskt till afro hår. Hans expertis inom herr- och damklippning kombinerar klassiska tekniker med moderna trender för att skapa personliga och stilrena frisyrer. Med särskild kunskap om barns behov gör han klippningen till en trygg och positiv upplevelse för de yngsta kunderna. Hans förmåga att förstå och arbeta med olika hårtexturer, kombinerat med hans skicklighet inom styling och föning, gör honom till en mångsidig frisör som kan möta varje kunds individuella önskemål."
+    bio: "Nori är en skicklig frisör med bred expertis inom olika hårtyper och stilar. Med särskild kompetens i att arbeta med allt från afro till skandinaviskt hår, erbjuder hon skräddarsydda lösningar för varje kunds unika behov. Hennes tekniska skicklighet kombinerat med ett kreativt öga gör henne till en mångsidig frisör som kan hantera alla typer av klippningar och stylingar."
+  },
+ 
+  'alyna': {
+    name: "Alyna",
+    title: "Nagel- och vaxningsspecialist",
+    specialties: [
+      "Manikyr",
+      "Pedikyr",
+      "Gellack",
+      "Nagel förlängning",
+      "Vaxning",
+      "Handvård",
+      "Fotvård"
+    ],
+    image: "https://static.wixstatic.com/media/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg/v1/fill/w_357,h_600,al_c,q_80,enc_auto/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg",
+    location: "Solna",
+    phone: "073-441 12 55",
+    bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
+    bio: "Alyna är vår mångsidiga expert inom nagelvård och vaxning med en särskild passion för att skapa vackra, hållbara nageldesigner. Med certifieringar inom både manikyr och pedikyr erbjuder hon omfattande hand- och fotvård av högsta kvalitet. Hennes tekniska skicklighet inom nagelförlängning och gellack, kombinerat med ett öga för detaljer, garanterar ett resultat som överträffar förväntningarna. Alyna håller sig ständigt uppdaterad med de senaste trenderna och teknikerna inom nagelvård för att kunna erbjuda sina kunder de mest moderna och eftertraktade behandlingarna."
   }
 };
 
 export default function TeamMemberPage() {
   const { slug } = useParams();
   const member = teamMembers[slug as keyof typeof teamMembers];
+  const [expandedLocation, setExpandedLocation] = useState<string | null>(null);
 
   if (!member) {
     return <div>Member not found</div>;
   }
+
+  const toggleLocation = (locationName: string) => {
+    setExpandedLocation(expandedLocation === locationName ? null : locationName);
+  };
 
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -97,38 +142,81 @@ export default function TeamMemberPage() {
           <h1 className="text-4xl font-light mb-2">{member.name}</h1>
           <p className="text-xl text-neutral-600 mb-6">{member.title}</p>
           
-          {/* Contact Info */}
-          <div className="flex flex-wrap gap-6 justify-center">
-            <div className="flex items-center gap-2 text-neutral-600">
-              <MapPin className="w-5 h-5 text-rose-400" />
-              <span>{member.location}</span>
+          {/* Locations and Schedule */}
+          {member.locations ? (
+            <div className="w-full max-w-md space-y-4">
+              {member.locations.map((location) => (
+                <div key={location.name} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <button
+                    onClick={() => toggleLocation(location.name)}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-neutral-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-beige-400" />
+                      <span className="font-medium">{location.name}</span>
+                    </div>
+                    <ChevronDown 
+                      className={`w-5 h-5 transition-transform duration-300 
+                        ${expandedLocation === location.name ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {expandedLocation === location.name && (
+                    <div className="px-6 pb-4 space-y-3">
+                      <div className="flex items-center gap-3 text-neutral-600">
+                        <Phone className="w-5 h-5 text-beige-400" />
+                        <a href={`tel:${location.phone.replace(/\s/g, '')}`} className="hover:text-beige-500">
+                          {location.phone}
+                        </a>
+                      </div>
+                      <div className="pt-2">
+                        <p className="text-sm text-neutral-500 mb-2">Öppettider:</p>
+                        {location.schedule.map((time) => (
+                          <div key={time.day} className="flex justify-between text-sm py-1">
+                            <span className="text-neutral-600">{time.day}</span>
+                            <span className="text-neutral-800">{time.hours}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <a 
+                        href={location.bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center justify-center w-full gap-2 px-6 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors"
+                      >
+                        <Calendar className="w-5 h-5" />
+                        Boka tid i {location.name}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-            <div className="flex items-center gap-2 text-neutral-600">
-              <Phone className="w-5 h-5 text-rose-400" />
-              <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="hover:text-rose-500 transition-colors">
-                {member.phone}
-              </a>
+          ) : (
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2 text-neutral-600">
+                <MapPin className="w-5 h-5 text-beige-400" />
+                <span>{member.location}</span>
+              </div>
+              <div className="flex items-center gap-2 text-neutral-600">
+                <Phone className="w-5 h-5 text-beige-400" />
+                <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="hover:text-beige-500">
+                  {member.phone}
+                </a>
+              </div>
             </div>
-            {member.bookingUrl ? (
-              <a 
-                href={member.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors"
-              >
-                <Calendar className="w-5 h-5" />
-                Boka tid
-              </a>
-            ) : (
-              <a 
-                href={`tel:${member.phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center gap-2 px-6 py-2 bg-rose-500 text-white rounded-full hover:bg-rose-600 transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                Ring nu
-              </a>
-            )}
-          </div>
+          )}
+          
+          {!member.locations && member.bookingUrl && (
+            <a 
+              href={member.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-beige-500 text-white rounded-full hover:bg-beige-600 transition-colors"
+            >
+              <Calendar className="w-5 h-5" />
+              Boka tid
+            </a>
+          )}
         </div>
 
         {/* Content Section */}

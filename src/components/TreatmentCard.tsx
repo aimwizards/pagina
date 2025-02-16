@@ -5,22 +5,19 @@ interface TreatmentCardProps {
   title: string;
   description: string[];
   imagePath: string;
-  color?: 'rose' | 'lavender' | 'mint' | 'beige';
+  color?: 'neutral';
 }
 
 export default function TreatmentCard({ 
   title, 
   description, 
   imagePath,
-  color = 'beige' 
+  color = 'neutral' 
 }: TreatmentCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const gradientColors = {
-    rose: 'from-black/30 via-transparent to-transparent',
-    lavender: 'from-black/30 via-transparent to-transparent',
-    mint: 'from-black/30 via-transparent to-transparent',
-    beige: 'from-black/30 via-transparent to-transparent',
+    neutral: 'from-black/30 via-transparent to-transparent',
   };
 
   return (
@@ -49,7 +46,7 @@ export default function TreatmentCard({
             <ul className="space-y-2 p-4 bg-white rounded-xl border border-neutral-100">
               {description.map((item, index) => (
                 <li key={index} className="text-sm text-neutral-600 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
                   {item}
                 </li>
               ))}

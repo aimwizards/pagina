@@ -6,22 +6,26 @@ const features = [
   {
     icon: Heart,
     title: "Passion för Skönhet",
-    description: "Vi brinner för att hjälpa dig att känna dig vacker och självsäker."
+    description: "Vi brinner för att hjälpa dig att känna dig vacker och självsäker.",
+    color: "rose"
   },
   {
     icon: Award,
     title: "Expertis & Kvalitet",
-    description: "Vårt team är certifierat och uppdaterat med de senaste teknikerna."
+    description: "Vårt team är certifierat och uppdaterat med de senaste teknikerna.",
+    color: "lavender"
   },
   {
     icon: Users,
     title: "Personlig Service",
-    description: "Vi skräddarsyr varje behandling efter dina unika behov."
+    description: "Vi skräddarsyr varje behandling efter dina unika behov.",
+    color: "mint"
   },
   {
     icon: Clock,
     title: "Lång Erfarenhet",
-    description: "Över 20 års erfarenhet av skönhetsbehandlingar."
+    description: "Över 20 års erfarenhet av skönhetsbehandlingar.",
+    color: "beige"
   }
 ];
 
@@ -53,14 +57,14 @@ export default function AboutSection() {
             <motion.div
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -right-8 bg-rose-500 text-white p-4 rounded-xl shadow-lg"
+              className="absolute -top-8 -right-8 bg-[#D4B78F] text-white p-4 rounded-xl shadow-lg"
             >
               <Award className="w-8 h-8" />
             </motion.div>
             <motion.div
               animate={{ y: [0, 20, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-8 -left-8 bg-lavender-500 text-white p-4 rounded-xl shadow-lg"
+              className="absolute -bottom-8 -left-8 bg-rose-500 text-white p-4 rounded-xl shadow-lg"
             >
               <Heart className="w-8 h-8" />
             </motion.div>
@@ -74,7 +78,9 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="lg:pl-12"
           >
-            <h2 className="text-4xl font-light mb-8">StylingByBrazil</h2>
+            <h2 className="text-4xl font-light mb-8 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent">
+              StylingByBrazil
+            </h2>
             
             <div className="space-y-6 text-neutral-600">
               <p>
@@ -94,8 +100,13 @@ export default function AboutSection() {
                     className="group"
                   >
                     <div className="flex items-center gap-4 mb-2">
-                      <div className="p-2 rounded-lg bg-gradient-to-br from-rose-500/10 to-lavender-500/10 group-hover:from-rose-500/20 group-hover:to-lavender-500/20 transition-all duration-300">
-                        <feature.icon className="w-6 h-6 text-rose-500" />
+                      <div className={`p-2 rounded-lg transition-all duration-300 
+                        ${feature.color === 'rose' && 'bg-rose-50 text-rose-500 group-hover:bg-rose-100'}
+                        ${feature.color === 'lavender' && 'bg-lavender-50 text-lavender-500 group-hover:bg-lavender-100'}
+                        ${feature.color === 'mint' && 'bg-mint-50 text-mint-500 group-hover:bg-mint-100'}
+                        ${feature.color === 'beige' && 'bg-beige-50 text-[#D4B78F] group-hover:bg-beige-100'}`}
+                      >
+                        <feature.icon className="w-6 h-6" />
                       </div>
                       <h3 className="font-medium text-neutral-800">{feature.title}</h3>
                     </div>

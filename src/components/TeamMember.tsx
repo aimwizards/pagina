@@ -39,15 +39,17 @@ export default function TeamMember({
             />
           </div>
           <div className="min-w-0">
-            <h3 className="text-xl font-light mb-1 text-neutral-800 truncate">{name}</h3>
+            <h3 className="text-xl font-light mb-1 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent truncate">
+              {name}
+            </h3>
             <p className="text-sm text-neutral-600 mb-2 truncate">{title}</p>
             <div className="flex items-center gap-2 text-sm text-neutral-600 truncate">
-              <MapPin className="w-4 h-4 shrink-0 text-rose-400" />
+              <MapPin className="w-4 h-4 shrink-0 text-[#D4B78F]" />
               <span>{location}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-neutral-600 truncate">
-              <Phone className="w-4 h-4 shrink-0 text-rose-400" />
-              <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-rose-400 transition-colors">
+              <Phone className="w-4 h-4 shrink-0 text-[#D4B78F]" />
+              <a href={`tel:${phone.replace(/\s/g, '')}`} className="hover:text-[#D4B78F] transition-colors">
                 {phone}
               </a>
             </div>
@@ -64,14 +66,16 @@ export default function TeamMember({
               >
                 {specialty && (
                   <>
-                    <span className="w-1 h-1 bg-rose-400 rounded-full mt-2 shrink-0"></span>
+                    <span className="w-1 h-1 bg-[#D4B78F] rounded-full mt-2 shrink-0"></span>
                     <span className="leading-tight truncate">{specialty}</span>
                   </>
                 )}
               </div>
             ))}
             {specialties.length > 6 && (
-              <div className="text-sm text-rose-400">+{specialties.length - 6} mer...</div>
+              <div className="text-sm bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent">
+                +{specialties.length - 6} mer...
+              </div>
             )}
           </div>
         </div>
@@ -81,7 +85,7 @@ export default function TeamMember({
           <Link 
             to={`/team/${slug}`}
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 bg-white 
-              text-rose-500 border border-rose-500 rounded-lg hover:bg-rose-50 transition-colors duration-300"
+              text-[#D4B78F] border border-[#D4B78F] rounded-lg hover:bg-[#D4B78F] hover:text-white transition-colors duration-300"
           >
             Läs mer
           </Link>
@@ -90,16 +94,16 @@ export default function TeamMember({
               href={bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 bg-rose-500 
-                text-white rounded-lg hover:bg-rose-600 transition-colors duration-300"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-4 bg-[#D4B78F] 
+                text-white rounded-lg hover:bg-[#E6CCAF] transition-colors duration-300"
             >
               Boka tid
             </a>
           ) : (
             <a 
               href={`tel:${phone.replace(/\s/g, '')}`}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 bg-rose-500 
-                text-white rounded-lg hover:bg-rose-600 transition-colors duration-300"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-4 bg-[#D4B78F] 
+                text-white rounded-lg hover:bg-[#E6CCAF] transition-colors duration-300"
             >
               Ring nu
             </a>

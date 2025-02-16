@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Scissors, Star, Eye, Zap, Sparkles, Phone, Instagram, Facebook, ChevronDown } from 'lucide-react';
+import { Menu, X, Scissors, Star, Eye, Zap, Sparkles, Phone, Instagram, Facebook, ChevronDown, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [frisorDropdownOpen, setFrisorDropdownOpen] = useState(false);
+  const [showAnnouncement, setShowAnnouncement] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,12 +36,31 @@ export default function Header() {
   ];
 
   return (
-    <header 
-      className={`fixed w-full transition-all duration-500 z-50 
-      ${scrolled 
-        ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
-        : 'bg-gradient-to-b from-black/50 to-transparent'}`}
-    >
+    <>
+      {showAnnouncement && (
+        <div className="hidden md:block fixed w-full z-50 top-0">
+          <div className="bg-neutral-900 text-white py-2 px-4">
+            <div className="container mx-auto flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm">
+                <MapPin className="w-4 h-4" />
+                <span>Vi kommer snart flytta permanent till Solna. Våran salong på Södermalm kommer inte finnas kvar.</span>
+              </div>
+              <button 
+                onClick={() => setShowAnnouncement(false)}
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      <header 
+        className={`fixed w-full transition-all duration-500 z-50 ${showAnnouncement ? 'md:top-8' : 'top-0'}
+        ${scrolled 
+          ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
+          : 'bg-gradient-to-b from-black/50 to-transparent'}`}
+      >
       <div className="absolute inset-x-0 -bottom-20 bg-gradient-to-b from-black/10 to-transparent h-20 pointer-events-none"></div>
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -59,7 +79,7 @@ export default function Header() {
                 to="/"
                 className={`flex items-center gap-1 transition-all duration-300 hover:scale-105
                   ${scrolled 
-                    ? 'text-neutral-600 hover:text-rose-500' 
+                    ? 'text-neutral-600 hover:text-[#D4B78F]' 
                     : 'text-white/90 hover:text-white'}`}
               >
                 <Star className="w-4 h-4" />
@@ -76,7 +96,7 @@ export default function Header() {
                   to="/frisor"
                   className={`flex items-center gap-1 transition-all duration-300 hover:scale-105
                     ${scrolled 
-                      ? 'text-neutral-600 hover:text-rose-500' 
+                      ? 'text-neutral-600 hover:text-[#D4B78F]' 
                       : 'text-white/90 hover:text-white'}`}
                 >
                   <Scissors className="w-4 h-4" />
@@ -95,7 +115,7 @@ export default function Header() {
                           to={item.path}
                           className={`block px-4 py-2 text-sm transition-colors duration-200
                             ${scrolled 
-                              ? 'text-neutral-600 hover:bg-neutral-50 hover:text-rose-500' 
+                              ? 'text-neutral-600 hover:bg-neutral-50 hover:text-[#D4B78F]' 
                               : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                         >
                           {item.name}
@@ -112,7 +132,7 @@ export default function Header() {
                   to={item.path}
                   className={`flex items-center gap-1 transition-all duration-300 hover:scale-105
                     ${scrolled 
-                      ? 'text-neutral-600 hover:text-rose-500' 
+                      ? 'text-neutral-600 hover:text-[#D4B78F]' 
                       : 'text-white/90 hover:text-white'}`}
                 >
                   <item.icon className="w-4 h-4" />
@@ -130,7 +150,7 @@ export default function Header() {
                   to="/behandlingar"
                   className={`flex items-center gap-1 transition-all duration-300 hover:scale-105
                     ${scrolled 
-                      ? 'text-neutral-600 hover:text-rose-500' 
+                      ? 'text-neutral-600 hover:text-[#D4B78F]' 
                       : 'text-white/90 hover:text-white'}`}
                 >
                   <Sparkles className="w-4 h-4" />
@@ -149,7 +169,7 @@ export default function Header() {
                           to={item.path}
                           className={`block px-4 py-2 text-sm transition-colors duration-200
                             ${scrolled 
-                              ? 'text-neutral-600 hover:bg-neutral-50 hover:text-rose-500' 
+                              ? 'text-neutral-600 hover:bg-neutral-50 hover:text-[#D4B78F]' 
                               : 'text-white/90 hover:bg-white/10 hover:text-white'}`}
                         >
                           {item.name}
@@ -164,27 +184,27 @@ export default function Header() {
 
               <div className="flex items-center gap-4">
                 <a
-                  href="tel:+46123456789"
+                  href="tel:+46760955887"
                   className={`transition-all duration-300 hover:scale-110
-                    ${scrolled ? 'text-rose-500 hover:text-rose-600' : 'text-white/90 hover:text-white'}`}
+                    ${scrolled ? 'text-[#D4B78F] hover:text-[#E6CCAF]' : 'text-white/90 hover:text-white'}`}
                 >
                   <Phone className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/stylingbybrazilstockholm/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-all duration-300 hover:scale-110
-                    ${scrolled ? 'text-rose-500 hover:text-rose-600' : 'text-white/90 hover:text-white'}`}
+                    ${scrolled ? 'text-[#D4B78F] hover:text-[#E6CCAF]' : 'text-white/90 hover:text-white'}`}
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/stylingbybrazil/?locale=sv_SE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`transition-all duration-300 hover:scale-110
-                    ${scrolled ? 'text-rose-500 hover:text-rose-600' : 'text-white/90 hover:text-white'}`}
+                    ${scrolled ? 'text-[#D4B78F] hover:text-[#E6CCAF]' : 'text-white/90 hover:text-white'}`}
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
@@ -192,7 +212,7 @@ export default function Header() {
                   to="/priser"
                   className={`px-6 py-2 rounded-full gradient-border transition-all duration-300 hover:scale-105
                     ${scrolled 
-                      ? 'text-rose-500 hover:text-rose-600' 
+                      ? 'text-[#D4B78F] hover:text-[#E6CCAF]' 
                       : 'text-white hover:text-rose-50'}`}
                 >
                   Priser
@@ -203,7 +223,7 @@ export default function Header() {
 
           <button
             className={`md:hidden transition-colors duration-300
-              ${scrolled ? 'text-rose-500' : 'text-white'}`}
+              ${scrolled ? 'text-[#D4B78F]' : 'text-white'}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -216,7 +236,7 @@ export default function Header() {
               {/* Mobile Menu Items */}
               <Link
                 to="/"
-                className="flex items-center gap-2 text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                className="flex items-center gap-2 text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 <Star className="w-4 h-4" />
@@ -227,7 +247,7 @@ export default function Header() {
               <div>
                 <Link
                   to="/frisor"
-                  className="flex items-center gap-2 text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   <Scissors className="w-4 h-4" />
@@ -238,7 +258,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       to={item.path}
-                      className="block text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                      className="block text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -251,7 +271,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="flex items-center gap-2 text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-4 h-4" />
@@ -263,7 +283,7 @@ export default function Header() {
               <div>
                 <Link
                   to="/behandlingar"
-                  className="flex items-center gap-2 text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                  className="flex items-center gap-2 text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   <Sparkles className="w-4 h-4" />
@@ -274,7 +294,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       to={item.path}
-                      className="block text-neutral-600 hover:text-rose-500 transition-colors duration-200"
+                      className="block text-neutral-600 hover:text-[#D4B78F] transition-colors duration-200"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -284,19 +304,19 @@ export default function Header() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t">
-                <a href="tel:+46123456789" className="text-rose-500">
+                <a href="tel:+46123456789" className="text-[#D4B78F] hover:text-[#E6CCAF]">
                   <Phone className="w-5 h-5" />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-rose-500">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#D4B78F] hover:text-[#E6CCAF]">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-rose-500">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#D4B78F] hover:text-[#E6CCAF]">
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>
               <Link
                 to="/priser"
-                className="w-full px-6 py-2 rounded-full gradient-border text-rose-500 hover:text-rose-600 transition-all duration-300"
+                className="w-full px-6 py-2 rounded-full gradient-border text-[#D4B78F] hover:text-[#E6CCAF] transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Priser
@@ -305,6 +325,7 @@ export default function Header() {
           </div>
         )}
       </nav>
-    </header>
+      </header>
+    </>
   );
 }

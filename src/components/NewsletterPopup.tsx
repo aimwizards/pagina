@@ -35,16 +35,16 @@ export default function NewsletterPopup() {
             exit={{ opacity: 0, x: '100%' }}
             className="fixed bottom-8 right-8 z-50 flex flex-col items-center"
           >
-            <span className="text-sm font-light text-rose-500 mb-2 bg-white px-3 py-1 rounded-full shadow-md">
+            <span className="text-sm font-light text-[#D4B78F] mb-2 bg-white px-3 py-1 rounded-full shadow-md">
               Nyhet
             </span>
             <button
               onClick={() => setIsOpen(true)}
-              className="bg-rose-500 text-white p-4 rounded-full shadow-lg
-                hover:bg-rose-600 transition-colors duration-300 group"
+              className="bg-[#D4B78F] text-white p-4 rounded-full shadow-lg
+                hover:bg-[#E6CCAF] transition-colors duration-300 group"
             >
               <PartyPopper className="w-6 h-6 animate-pulse" />
-              <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-rose-500 
+              <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-[#D4B78F] 
                 px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300
                 whitespace-nowrap pointer-events-none">
                 Nyhet - Invigning!
@@ -87,8 +87,8 @@ export default function NewsletterPopup() {
               </button>
 
               <div className="text-center mb-8">
-                <div className={`inline-flex items-center justify-center bg-rose-50 
-                  text-rose-500 rounded-full mb-6
+                <div className={`inline-flex items-center justify-center bg-beige-50 
+                  text-[#D4B78F] rounded-full mb-6
                   ${isMobile ? 'w-20 h-20 mt-4' : 'w-16 h-16'}`}>
                   <PartyPopper className={`${isMobile ? 'w-10 h-10' : 'w-8 h-8'}`} />
                 </div>
@@ -102,18 +102,18 @@ export default function NewsletterPopup() {
 
               <div className={`space-y-6 mb-8 ${isMobile ? 'mt-12' : ''}`}>
                 <div className="flex items-start gap-4">
-                  <Calendar className="w-5 h-5 text-rose-400 mt-1" />
+                  <Calendar className="w-5 h-5 text-[#D4B78F] mt-1" />
                   <div>
                     <p className="font-medium">Lördag den 30 november</p>
                     <p className="text-neutral-600">Klockan 15:00 - 18:00</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-rose-400 mt-1" />
+                  <MapPin className="w-5 h-5 text-[#D4B78F] mt-1" />
                   <p>Solnavägen 29H</p>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-rose-400 mt-1" />
+                  <Phone className="w-5 h-5 text-[#D4B78F] mt-1" />
                   <div>
                     <p className="text-neutral-600">SMS:a för att ta del av invigningen till:</p>
                     <p className="font-medium mt-1">073-441 12 55 eller 072-913 70 04</p>
@@ -125,8 +125,8 @@ export default function NewsletterPopup() {
               <div className={`flex flex-col gap-4 ${isMobile ? 'mt-auto' : 'sm:flex-row'}`}>
                 <a 
                   href="sms:0734411255"
-                  className={`flex-1 bg-rose-500 text-white text-center py-3 rounded-lg 
-                    hover:bg-rose-600 transition-colors duration-300
+                  className={`flex-1 bg-[#D4B78F] text-white text-center py-3 rounded-lg 
+                    hover:bg-[#E6CCAF] transition-colors duration-300
                     ${isMobile ? 'text-lg py-4' : ''}`}
                 >
                   SMS:a nu
@@ -136,8 +136,8 @@ export default function NewsletterPopup() {
                     setIsOpen(false);
                     setIsMinimized(true);
                   }}
-                  className={`flex-1 border border-neutral-200 text-neutral-600 rounded-lg
-                    hover:bg-neutral-50 transition-colors duration-300
+                  className={`flex-1 border border-[#D4B78F] text-[#D4B78F] rounded-lg
+                    hover:bg-[#D4B78F] hover:text-white transition-colors duration-300
                     ${isMobile ? 'text-lg py-4' : 'py-3'}`}
                 >
                   Påminn senare

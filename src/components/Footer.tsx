@@ -4,30 +4,30 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white/80">
+    <footer className="bg-neutral-900 text-white/90">
       {/* Main Footer Content */}
       <div className="container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Solna Location */}
           <div className="space-y-4">
-            <h3 className="text-xl font-light text-white mb-6">Solna</h3>
+            <h3 className="text-xl font-light text-[#D4B78F] mb-6">Solna</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-rose-400 mt-1" />
+                <MapPin className="w-5 h-5 text-[#D4B78F] mt-1" />
                 <div>
                   <p>Solnavägen 29 H</p>
                   <p>171 45, Solna</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-rose-400" />
-                <a href="tel:0760955887" className="hover:text-rose-400 transition-colors">
+                <Phone className="w-5 h-5 text-[#D4B78F]" />
+                <a href="tel:0760955887" className="hover:text-[#D4B78F] transition-colors">
                   076-095 58 87
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-rose-400" />
-                <a href="mailto:info@stylingbybrazil.se" className="hover:text-rose-400 transition-colors">
+                <Mail className="w-5 h-5 text-[#D4B78F]" />
+                <a href="mailto:info@stylingbybrazil.se" className="hover:text-[#D4B78F] transition-colors">
                   info@stylingbybrazil.se
                 </a>
               </div>
@@ -36,24 +36,24 @@ export default function Footer() {
 
           {/* Södermalm Location */}
           <div className="space-y-4">
-            <h3 className="text-xl font-light text-white mb-6">Södermalm</h3>
+            <h3 className="text-xl font-light text-[#D4B78F] mb-6">Södermalm</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-rose-400 mt-1" />
+                <MapPin className="w-5 h-5 text-[#D4B78F] mt-1" />
                 <div>
                   <p>Katarina Bangata 15</p>
                   <p>116 39, Södermalm</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-rose-400" />
-                <a href="tel:0734411255" className="hover:text-rose-400 transition-colors">
+                <Phone className="w-5 h-5 text-[#D4B78F]" />
+                <a href="tel:0734411255" className="hover:text-[#D4B78F] transition-colors">
                   073-441 12 55
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-rose-400" />
-                <a href="mailto:info@stylingbybrazil.se" className="hover:text-rose-400 transition-colors">
+                <Mail className="w-5 h-5 text-[#D4B78F]" />
+                <a href="mailto:info@stylingbybrazil.se" className="hover:text-[#D4B78F] transition-colors">
                   info@stylingbybrazil.se
                 </a>
               </div>
@@ -62,25 +62,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-light text-white mb-6">Snabblänkar</h3>
+            <h3 className="text-xl font-light text-[#D4B78F] mb-6">Snabblänkar</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/priser" className="hover:text-rose-400 transition-colors">
+                <Link to="/priser" className="hover:text-[#D4B78F] transition-colors">
                   Priser
                 </Link>
               </li>
               <li>
-                <Link to="/boka" className="hover:text-rose-400 transition-colors">
+                <Link to="/boka" className="hover:text-[#D4B78F] transition-colors">
                   Boka Tid
                 </Link>
               </li>
               <li>
-                <Link to="/behandlingar" className="hover:text-rose-400 transition-colors">
+                <Link to="/behandlingar" className="hover:text-[#D4B78F] transition-colors">
                   Behandlingar
                 </Link>
               </li>
               <li>
-                <Link to="/kontakt" className="hover:text-rose-400 transition-colors">
+                <Link to="/kontakt" className="hover:text-[#D4B78F] transition-colors">
                   Kontakt
                 </Link>
               </li>
@@ -89,29 +89,29 @@ export default function Footer() {
 
           {/* Social & Hours */}
           <div>
-            <h3 className="text-xl font-light text-white mb-6">Följ Oss</h3>
+            <h3 className="text-xl font-light text-[#D4B78F] mb-6">Följ Oss</h3>
             <div className="flex gap-4 mb-8">
               <a 
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-neutral-800 p-3 rounded-full hover:bg-rose-500 transition-colors duration-300"
+                className="bg-[#D4B78F] p-3 rounded-full hover:bg-[#E6CCAF] transition-colors duration-300"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-5 h-5 text-white" />
               </a>
               <a 
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-neutral-800 p-3 rounded-full hover:bg-rose-500 transition-colors duration-300"
+                className="bg-[#D4B78F] p-3 rounded-full hover:bg-[#E6CCAF] transition-colors duration-300"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5 text-white" />
               </a>
             </div>
 
             <div className="space-y-3">
-              <h4 className="text-white font-light flex items-center gap-2">
-                <Clock className="w-5 h-5 text-rose-400" />
+              <h4 className="text-[#D4B78F] font-light flex items-center gap-2">
+                <Clock className="w-5 h-5 text-[#D4B78F]" />
                 Öppettider
               </h4>
               <div className="space-y-1 text-sm">
@@ -132,10 +132,10 @@ export default function Footer() {
               © {new Date().getFullYear()} StylingByBrazil. Alla rättigheter förbehållna.
             </p>
             <div className="flex gap-6 text-sm text-neutral-400">
-              <a href="/privacy" className="hover:text-rose-400 transition-colors">
+              <a href="/privacy" className="hover:text-[#D4B78F] transition-colors">
                 Integritetspolicy
               </a>
-              <a href="/terms" className="hover:text-rose-400 transition-colors">
+              <a href="/terms" className="hover:text-[#D4B78F] transition-colors">
                 Villkor
               </a>
             </div>

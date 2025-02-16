@@ -8,7 +8,7 @@ export default function Laser() {
       <PageHero 
         title="Laser"
         description="Permanent hårborttagning med modern teknologi"
-        image="https://pamchaneyaesthetics.com/wp-content/uploads/2022/12/Are-Laser-Treatments-Good-for-All-Skin-Types-2048x1366.jpeg"
+        image="https://static.wixstatic.com/media/8f7788_efd4402958bd41fe9a1a905189b41211~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/632A9055.jpg"
       />
       
       <section className="py-24">
@@ -25,7 +25,7 @@ export default function Laser() {
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div className="aspect-[4/5] rounded-lg overflow-hidden">
               <img 
-                src="https://images.squarespace-cdn.com/content/v1/5c8d59b3f4e5317be3fe8bd7/3f0c5bac-fcf1-4118-9db9-8719852ef948/laser+treatment+for+dark+spots+price.png?format=2500w"
+                src="https://static.wixstatic.com/media/8f7788_378fdb67af7a426993f7a89765080f92~mv2.jpg/v1/fill/w_600,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/632A9094.jpg"
                 alt="Laser behandling"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -47,7 +47,7 @@ export default function Laser() {
               <Sparkles className="w-5 h-5" />
               Se våra priser
             </a>
-            <a href="/boka" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
+            <a href="/#team-section" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-beige-500 text-beige-500 rounded-full hover:bg-beige-500 hover:text-white transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Boka tid
             </a>
