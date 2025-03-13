@@ -16,19 +16,26 @@ const salons = [
       { day: "Söndag", hours: "Stängt" }
     ],
     services: [
-      "Frisör",
-      "Keratin",
-      "Laser",
-      "Hudvård",
-      "Ögon & Bryn",
-      "Vaxning"
-    ]
+      "Frisör (dam, herr, barn)",
+      "Färgning & Balayage",
+      "Keratin & Protein behandling",
+      "Brasiliansk Vaxning",
+      "Laser Soprano Ice",
+      "Fettfrysning (Coolshaping 2)",
+      "Powershape-2 Indiba",
+      "INSCULPT behandling",
+      "Ansiktsbehandling",
+      "Ögonbryn & Lashlift",
+      "Manikyr",
+      "Massage"
+    ],
+    note: "OBS! Rosangela arbetar endast måndag, onsdag och lördag"
   },
   {
     name: "Södermalm",
     address: "Katarina Bangata 15",
     postal: "116 39, Södermalm",
-    phone: "073-441 12 55",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
     openingHours: [
       { day: "Måndag-Fredag", hours: "10:00 - 19:00" },
@@ -36,11 +43,19 @@ const salons = [
       { day: "Söndag", hours: "Stängt" }
     ],
     services: [
-      "Frisör",
-      "Hudvård",
-      "Laser",
-      "Ansiktsbehandling",
-      "Kroppsbehandling"
+      "Bryn & Fransar",
+      "Klippning",
+      "Fön & Hårstyling",
+      "Hårbehandling & Inpackning",
+      "Keratin behandling",
+      "Keratin för Afro hår",
+      "Keratin Organic",
+      "Färgning & Slingor",
+      "Brasiliansk Vaxning",
+      "Massage med Indiba",
+      "Klassisk Massage",
+      "Vaxning för män",
+      "Pedikyr & Manikyr"
     ]
   }
 ];
@@ -168,6 +183,9 @@ export default function TeamSection() {
                           <span className="text-neutral-800">{time.hours}</span>
                         </div>
                       ))}
+                      {salon.note && (
+                        <p className="text-sm text-rose-500 mt-2 font-medium">{salon.note}</p>
+                      )}
                     </div>
                   </div>
 
