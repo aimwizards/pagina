@@ -42,6 +42,7 @@ const salons = [
       { day: "Lördag", hours: "10:00 - 17:00" },
       { day: "Söndag", hours: "Stängt" }
     ],
+    note: "OBS! Rosangela arbetar endast tisdag, torsdag och fredag",
     services: [
       "Bryn & Fransar",
       "Klippning",
@@ -52,7 +53,6 @@ const salons = [
       "Keratin Organic",
       "Färgning & Slingor",
       "Brasiliansk Vaxning",
-      "Massage med Indiba",
       "Klassisk Massage",
       "Vaxning för män",
       "Pedikyr & Manikyr"
@@ -114,7 +114,33 @@ const solnaTeam = [
     image: "https://static.wixstatic.com/media/8f7788_827e9905211647778aefccc98c9c4a86~mv2.jpeg/v1/fill/w_600,h_808,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/WhatsApp%20Image%202024-09-27%20at%2022_01_13.jpeg",
     location: "Solna",
     phone: "070-465 65 13",
-    slug: "nori"
+    slug: "nori",
+    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
+  },
+  {
+    name: "Miry",
+    title: "Vax terapeut - brasiliansk vaxning",
+    specialties: [
+      "Brasiliansk vaxning"
+    ],
+    image: "https://i.ibb.co/MkHN5DLp/alyna.jpg",
+    location: "Solna",
+    phone: "073-441 12 55",
+    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
+  },
+  {
+    name: "Alyna",
+    title: "Nagel- och vaxningsspecialist",
+    specialties: [
+      "Manikyr",
+      "Pedikyr",
+      "Vaxning",
+      "Klassisk massage"
+    ],
+    image: "https://i.ibb.co/wN5KbhPn/Imagem-do-Whats-App-de-2025-03-19-s-19-04-10-05efd4e5.jpg",
+    location: "Solna",
+    phone: "073-441 12 55",
+    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
   }
 ];
 
@@ -165,7 +191,7 @@ export default function TeamSection() {
                     <MapPin className="w-6 h-6 text-beige-500" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-light">{salon.name}</h3>
+                    <h3 className="text-2xl font-semibold text-beige-500">{salon.name}</h3>
                     <p className="text-neutral-600">{salon.address}</p>
                     <p className="text-neutral-500 text-sm">{salon.postal}</p>
                   </div>
