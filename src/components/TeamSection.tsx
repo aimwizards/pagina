@@ -130,7 +130,7 @@ const solnaTeam = [
   },
   {
     name: "Alyna",
-    title: "Nagel- och vaxningsspecialist",
+    title: Vax terapeut - brasiliansk vaxning",
     specialties: [
       "Manikyr",
       "Pedikyr",
@@ -139,7 +139,7 @@ const solnaTeam = [
     ],
     image: "https://i.ibb.co/wN5KbhPn/Imagem-do-Whats-App-de-2025-03-19-s-19-04-10-05efd4e5.jpg",
     location: "Solna",
-    phone: "073-441 12 55",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
   }
 ];
