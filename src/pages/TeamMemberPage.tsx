@@ -96,7 +96,7 @@ const teamMembers = {
  
   'alyna': {
     name: "Alyna",
-    title: "Nagel- och vaxningsspecialist",
+    title: "Nagel- och hudterap",
     specialties: [
       "Manikyr",
       "Pedikyr",
@@ -108,7 +108,7 @@ const teamMembers = {
     ],
     image: "https://static.wixstatic.com/media/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg/v1/fill/w_357,h_600,al_c,q_80,enc_auto/8f7788_c4f94b0b253a4850af69e94ad723d34b~mv2.jpg",
     location: "Solna",
-    phone: "073-441 12 55",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-stockholm-sodermalm-styling-by-brazil-vaxning-50453",
     bio: "Alyna är vår mångsidiga expert inom nagelvård och vaxning med en särskild passion för att skapa vackra, hållbara nageldesigner. Med certifieringar inom både manikyr och pedikyr erbjuder hon omfattande hand- och fotvård av högsta kvalitet. Hennes tekniska skicklighet inom nagelförlängning och gellack, kombinerat med ett öga för detaljer, garanterar ett resultat som överträffar förväntningarna. Alyna håller sig ständigt uppdaterad med de senaste trenderna och teknikerna inom nagelvård för att kunna erbjuda sina kunder de mest moderna och eftertraktade behandlingarna."
   }
