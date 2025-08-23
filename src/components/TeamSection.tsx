@@ -87,46 +87,37 @@ const solnaTeam = [
     slug: "rosangela-lima"
   },
   {
-    name: "Justina Polivoda",
-    title: "Cidesco-diplomerad hudterapeut",
+    name: "July",
+    title: "Skönhetsterapeut",
     specialties: [
       "Ansiktsbehandling",
-      "Ögonbryn",
-      "Browlift",
-      "Lashlift"
-    ],
-    image: "https://static.wixstatic.com/media/8f7788_cf871a14f08d416cb3218474e2377690~mv2.jpg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/download.jpg",
-    location: "Solna",
-    phone: "072-913 70 04",
-    bookingUrl: "https://www.bokadirekt.se/places/justina-polivoda-55860",
-    slug: "justina-polivoda"
-  },
-  {
-    name: "Cinthia",
-    title: "Keratin & Massage Terapeut",
-    specialties: [
-      "Brasiliansk keratin",
+      "Hudvård",
       "Vaxning",
-      "Massage"
+      "Ögonbryn",
+      "Fransar"
     ],
-    image: "https://i.ibb.co/pB4x2CVd/489007370-1135898254954225-6426406883653009267-n.jpg",
+    image: "https://i.ibb.co/NcYLY5x/photo-2025-08-23-07-53-47-2.jpg",
     location: "Solna",
-    phone: "073-441 12 55",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
-    slug: "cinthia",
-    bio: "Cinthia är vår specialiserade terapeut med expertis inom brasiliansk keratinbehandling och massage. Med sin omfattande erfarenhet erbjuder hon professionella behandlingar som ger fantastiska resultat. Hennes skicklighet inom vaxning och massageterapi gör henne till en mångsidig expert som kan hjälpa dig att uppnå dina önskade resultat."
+    slug: "july"
   },
   {
-    name: "Miry",
-    title: "Vax terapeut",
+    name: "Renata",
+    title: "Nagel- och fotterapeut",
     specialties: [
-      "Brasiliansk vaxning"
+      "Manikyr",
+      "Pedikyr",
+      "Gellack",
+      "Nagelförlängning",
+      "Handvård",
+      "Fotvård"
     ],
-    image: "https://i.ibb.co/MkHN5DLp/alyna.jpg",
+    image: "https://i.ibb.co/HfqMjQHP/photo-2025-08-23-07-53-47.jpg",
     location: "Solna",
-    phone: "073-441 12 55",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
-    slug: "miry"
+    slug: "renata"
   }
 ];
 
