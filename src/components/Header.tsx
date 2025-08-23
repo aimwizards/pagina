@@ -43,7 +43,7 @@ export default function Header() {
             <div className="container mx-auto flex items-center justify-between">
               <div className="flex items-center gap-2 text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>Vi kommer snart flytta permanent till Solna. Våran salong på Södermalm kommer inte finnas kvar.</span>
+                <span>Nyhet: Vi erbjuder nu friskvård! • Vi kommer snart flytta permanent till Solna.</span>
               </div>
               <button 
                 onClick={() => setShowAnnouncement(false)}
