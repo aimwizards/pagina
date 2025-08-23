@@ -93,43 +93,31 @@ export default function NewsletterPopup() {
                   <PartyPopper className={`${isMobile ? 'w-10 h-10' : 'w-8 h-8'}`} />
                 </div>
                 <h2 className={`font-light mb-4 ${isMobile ? 'text-3xl' : 'text-2xl'}`}>
-                  Invigning!
+                  Nyhet: Friskvård!
                 </h2>
                 <p className="text-neutral-600">
-                  Vi bjuder på bubbel, lättare tilltugg samt en massa erbjudanden och rabatter
+                  Vi erbjuder nu friskvård! Detta innebär att du kan använda ditt friskvårdsbidrag för våra behandlingar.
                 </p>
               </div>
 
               <div className={`space-y-6 mb-8 ${isMobile ? 'mt-12' : ''}`}>
                 <div className="flex items-start gap-4">
-                  <Calendar className="w-5 h-5 text-[#D4B78F] mt-1" />
+                  <PartyPopper className="w-5 h-5 text-[#D4B78F] mt-1" />
                   <div>
-                    <p className="font-medium">Lördag den 30 november</p>
-                    <p className="text-neutral-600">Klockan 15:00 - 18:00</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-[#D4B78F] mt-1" />
-                  <p>Solnavägen 29H</p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-[#D4B78F] mt-1" />
-                  <div>
-                    <p className="text-neutral-600">SMS:a för att ta del av invigningen till:</p>
-                    <p className="font-medium mt-1">073-441 12 55 eller 072-913 70 04</p>
-                    <p className="text-sm text-neutral-500 mt-2">Obs! Senast den 27:e november</p>
+                    <p className="font-medium">Nyhet: Friskvård</p>
+                    <p className="text-neutral-600">Nu kan du använda ditt friskvårdsbidrag för våra behandlingar</p>
                   </div>
                 </div>
               </div>
 
               <div className={`flex flex-col gap-4 ${isMobile ? 'mt-auto' : 'sm:flex-row'}`}>
                 <a 
-                  href="sms:0734411255"
+                  href="/#team-section"
                   className={`flex-1 bg-[#D4B78F] text-white text-center py-3 rounded-lg 
                     hover:bg-[#E6CCAF] transition-colors duration-300
                     ${isMobile ? 'text-lg py-4' : ''}`}
                 >
-                  SMS:a nu
+                  Boka tid
                 </a>
                 <button
                   onClick={() => {
@@ -140,7 +128,7 @@ export default function NewsletterPopup() {
                     hover:bg-[#D4B78F] hover:text-white transition-colors duration-300
                     ${isMobile ? 'text-lg py-4' : 'py-3'}`}
                 >
-                  Påminn senare
+                  Stäng
                 </button>
               </div>
             </motion.div>
