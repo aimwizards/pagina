@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Calendar, Clock, Sparkles, Star } from 'lucide-react';
+import { MapPin, Phone, Calendar, Clock } from 'lucide-react';
 import TeamMember from './TeamMember';
 
 const salons = [
@@ -14,22 +14,7 @@ const salons = [
       { day: "Måndag-Fredag", hours: "10:00 - 19:00" },
       { day: "Lördag", hours: "10:00 - 17:00" },
       { day: "Söndag", hours: "Stängt" }
-    ],
-    services: [
-      "Frisör (dam, herr, barn)",
-      "Färgning & Balayage",
-      "Keratin & Protein behandling",
-      "Brasiliansk Vaxning",
-      "Laser Soprano Ice",
-      "Fettfrysning (Coolshaping 2)",
-      "Powershape-2 Indiba",
-      "INSCULPT behandling",
-      "Ansiktsbehandling",
-      "Ögonbryn & Lashlift",
-      "Manikyr",
-      "Massage"
-    ],
-    note: "OBS! Rosangela arbetar endast måndag, onsdag och lördag"
+    ]
   },
   {
     name: "Södermalm",
@@ -41,21 +26,6 @@ const salons = [
       { day: "Måndag-Fredag", hours: "10:00 - 19:00" },
       { day: "Lördag", hours: "10:00 - 17:00" },
       { day: "Söndag", hours: "Stängt" }
-    ],
-    note: "OBS! Rosangela arbetar endast tisdag, torsdag och fredag",
-    services: [
-      "Bryn & Fransar",
-      "Klippning",
-      "Fön & Hårstyling",
-      "Hårbehandling & Inpackning",
-      "Keratin behandling",
-      "Keratin för Afro hår",
-      "Keratin Organic",
-      "Färgning & Slingor",
-      "Brasiliansk Vaxning",
-      "Klassisk Massage",
-      "Vaxning för män",
-      "Pedikyr & Manikyr"
     ]
   }
 ];
@@ -84,7 +54,8 @@ const solnaTeam = [
     location: "Solna & Södermalm",
     phone: "076-095 58 87",
     bookingUrl: "/team/rosangela-lima",
-    slug: "rosangela-lima"
+    slug: "rosangela-lima",
+    workingDays: "Solna: Måndag, Onsdag & Lördag | Södermalm: Tisdag, Torsdag & Fredag"
   },
   {
     name: "July",
@@ -118,6 +89,22 @@ const solnaTeam = [
     phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
     slug: "renata"
+  },
+  {
+    name: "Haydar",
+    title: "Estetiska injektionsbehandlingar",
+    specialties: [
+      "Neurotoxin",
+      "Fillers",
+      "Polynukleotider (PN)",
+      "Skinbooster / Mesoterapi",
+      "PRP - med kroppens egna resurser"
+    ],
+    image: "https://drhaddebeauty.se/img777.jpg",
+    location: "Solna",
+    phone: "076-095 58 87",
+    bookingUrl: "https://www.bokadirekt.se/places/dr-hadde-beauty-131864",
+    slug: "haydar"
   }
 ];
 
@@ -186,27 +173,6 @@ export default function TeamSection() {
                           <span className="text-neutral-800">{time.hours}</span>
                         </div>
                       ))}
-                      {salon.note && (
-                        <p className="text-sm text-rose-500 mt-2 font-medium">{salon.note}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Services */}
-                  <div className="flex items-start gap-3">
-                    <Sparkles className="w-5 h-5 text-beige-400 mt-1" />
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-neutral-800 mb-2">Behandlingar</p>
-                      <div className="flex flex-wrap gap-2">
-                        {salon.services.map((service) => (
-                          <span
-                            key={service}
-                            className="text-sm bg-beige-50 text-beige-500 px-3 py-1 rounded-full"
-                          >
-                            {service}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
 

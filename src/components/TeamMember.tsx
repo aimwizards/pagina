@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone } from 'lucide-react';
+import { MapPin, Phone, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface TeamMemberProps {
@@ -11,17 +11,19 @@ interface TeamMemberProps {
   phone: string;
   bookingUrl?: string;
   slug: string;
+  workingDays?: string;
 }
 
-export default function TeamMember({ 
-  name, 
-  title, 
-  specialties, 
-  image, 
-  location, 
+export default function TeamMember({
+  name,
+  title,
+  specialties,
+  image,
+  location,
   phone,
   bookingUrl,
-  slug 
+  slug,
+  workingDays
 }: TeamMemberProps) {
   // Always show 6 items, pad with empty strings if needed
   const displaySpecialties = [...specialties, ...Array(6)].slice(0, 6);
@@ -53,6 +55,12 @@ export default function TeamMember({
                 {phone}
               </a>
             </div>
+            {workingDays && (
+              <div className="flex items-start gap-2 text-xs text-rose-500 mt-1">
+                <Calendar className="w-3 h-3 shrink-0 mt-0.5" />
+                <span className="leading-tight">{workingDays}</span>
+              </div>
+            )}
           </div>
         </div>
 

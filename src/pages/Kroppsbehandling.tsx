@@ -55,6 +55,27 @@ export default function Kroppsbehandling() {
                       <p className="text-neutral-600">Närande behandling som ger silkeslen hud</p>
                     </div>
                   </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <div>
+                      <strong className="block text-neutral-800">Fettfrysning Coolshaping 2</strong>
+                      <p className="text-neutral-600">Avancerad kryolipolys som eliminerar fettceller genom kontrollerad kyla</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <div>
+                      <strong className="block text-neutral-800">Powershape-2 Indiba RF</strong>
+                      <p className="text-neutral-600">Radiofrekvensbehandling för hudåtstramning och kroppskontroll</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-beige-400 mt-2"></span>
+                    <div>
+                      <strong className="block text-neutral-800">INSCULPT behandling</strong>
+                      <p className="text-neutral-600">Muskelstimulering och fettreducering för optimala resultat</p>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
