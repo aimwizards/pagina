@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Calendar, Clock, X } from 'lucide-react';
+import { MapPin, Phone, Calendar, Clock, X, Star } from 'lucide-react';
 import TeamMember from './TeamMember';
 import FriskvardBanner from './FriskvardBanner';
 
@@ -170,7 +170,7 @@ export default function TeamSection() {
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   {/* Header */}
                   <div className="mb-8">
-                    <h3 className="text-4xl font-light bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent mb-6 text-center">
+                    <h3 className="text-4xl font-semibold bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent mb-6 text-center">
                       {salon.name}
                     </h3>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -179,6 +179,11 @@ export default function TeamSection() {
                           <p className="text-neutral-800 font-medium text-xl mb-2">{loc.name}</p>
                           <p className="text-neutral-600">{loc.address}</p>
                           <p className="text-neutral-500">{loc.postal}</p>
+                          {loc.name === "Södermalm" && (
+                            <p className="text-red-600 font-semibold text-sm mt-2">
+                              OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.
+                            </p>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -231,17 +236,24 @@ export default function TeamSection() {
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-[#E6CCAF] to-[#D4B78F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <Calendar className="w-6 h-6 relative z-10" />
-                    <span className="text-xl font-medium relative z-10">Boka Tid Online</span>
+                    <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
                   </button>
 
                   {/* Trust Badge */}
-                  <div className="mt-6 flex items-center justify-center gap-2 text-sm text-neutral-500">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
-                      <div className="w-8 h-8 rounded-full bg-[#E6CCAF] border-2 border-white"></div>
-                      <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
+                  <div className="mt-6 flex flex-col items-center justify-center gap-3">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-[#D4B78F] text-[#D4B78F]" />
+                      ))}
                     </div>
-                    <span>Över 500+ nöjda kunder</span>
+                    <div className="flex items-center gap-2 text-sm text-neutral-600">
+                      <div className="flex -space-x-2">
+                        <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
+                        <div className="w-8 h-8 rounded-full bg-[#E6CCAF] border-2 border-white"></div>
+                        <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
+                      </div>
+                      <span className="font-medium">Över 2000+ nöjda kunder</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -350,6 +362,9 @@ export default function TeamSection() {
                         <h4 className="text-lg font-medium text-neutral-800 mb-1">Södermalm</h4>
                         <p className="text-sm text-neutral-600">Katarina Bangata 15</p>
                         <p className="text-xs text-neutral-500">116 39, Södermalm</p>
+                        <p className="text-xs text-red-600 font-semibold mt-2">
+                          OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.
+                        </p>
                       </div>
                       <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
                     </div>

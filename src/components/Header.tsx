@@ -41,11 +41,11 @@ export default function Header() {
         <div className="hidden md:block fixed w-full z-50 top-0">
           <div className="bg-neutral-900 text-white py-2 px-4">
             <div className="container mx-auto flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm font-semibold">
                 <MapPin className="w-4 h-4" />
-                <span>Nyhet: Vi erbjuder nu friskvård!</span>
+                <span>OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.</span>
               </div>
-              <button 
+              <button
                 onClick={() => setShowAnnouncement(false)}
                 className="text-white/60 hover:text-white transition-colors"
               >
