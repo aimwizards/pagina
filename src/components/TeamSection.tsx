@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Calendar, Clock } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, Calendar, Clock, X } from 'lucide-react';
 import TeamMember from './TeamMember';
 import FriskvardBanner from './FriskvardBanner';
 
 const salons = [
   {
-    name: "Solna",
-    address: "Solnavägen 29 H",
-    postal: "171 45, Solna",
+    name: "Solna & Södermalm",
+    locations: [
+      {
+        name: "Solna",
+        address: "Solnavägen 29 H",
+        postal: "171 45, Solna"
+      },
+      {
+        name: "Södermalm",
+        address: "Katarina Bangata 15",
+        postal: "116 39, Södermalm"
+      }
+    ],
     phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
     openingHours: [
@@ -100,6 +110,7 @@ const sodermalmTeam = [];
 
 export default function TeamSection() {
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const [showLocationPopup, setShowLocationPopup] = useState(false);
 
   const desktopTeam = [...solnaTeam, ...sodermalmTeam];
 
@@ -117,7 +128,7 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
           className="text-4xl font-light text-center mb-4"
         >
-          Salong i Solna
+          Våra Salonger
         </motion.h2>
         
         <motion.p
@@ -127,7 +138,7 @@ export default function TeamSection() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-center text-neutral-600 mb-12 max-w-2xl mx-auto"
         >
-          Välj din närmaste salong och boka tid hos någon av våra skickliga specialister.
+          Besök oss på någon av våra salonger och boka tid hos någon av våra skickliga specialister.
         </motion.p>
 
         {/* Salon Cards */}
@@ -157,17 +168,19 @@ export default function TeamSection() {
 
                 {/* Right Side - Content */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  {/* Header with Icon */}
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] p-4 rounded-2xl shadow-lg">
-                      <MapPin className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-4xl font-light bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent">
-                        {salon.name}
-                      </h3>
-                      <p className="text-neutral-600 text-lg mt-1">{salon.address}</p>
-                      <p className="text-neutral-500">{salon.postal}</p>
+                  {/* Header */}
+                  <div className="mb-8">
+                    <h3 className="text-4xl font-light bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent mb-6 text-center">
+                      {salon.name}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {salon.locations.map((loc) => (
+                        <div key={loc.name} className="text-center">
+                          <p className="text-neutral-800 font-medium text-xl mb-2">{loc.name}</p>
+                          <p className="text-neutral-600">{loc.address}</p>
+                          <p className="text-neutral-500">{loc.postal}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
@@ -211,17 +224,15 @@ export default function TeamSection() {
                   </div>
 
                   {/* CTA Button */}
-                  <a
-                    href={salon.bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    onClick={() => setShowLocationPopup(true)}
                     className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
                       hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-[#E6CCAF] to-[#D4B78F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <Calendar className="w-6 h-6 relative z-10" />
                     <span className="text-xl font-medium relative z-10">Boka Tid Online</span>
-                  </a>
+                  </button>
 
                   {/* Trust Badge */}
                   <div className="mt-6 flex items-center justify-center gap-2 text-sm text-neutral-500">
@@ -265,6 +276,90 @@ export default function TeamSection() {
           ))}
         </div>
       </div>
+
+      {/* Location Selection Popup */}
+      <AnimatePresence>
+        {showLocationPopup && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowLocationPopup(false)}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            />
+
+            {/* Popup */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            >
+              <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowLocationPopup(false)}
+                  className="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors"
+                >
+                  <X className="w-6 h-6 text-neutral-600" />
+                </button>
+
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] rounded-full mb-4">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-light mb-2">Välj Salong</h3>
+                  <p className="text-neutral-600">Vilken av våra salonger vill du boka hos?</p>
+                </div>
+
+                {/* Location Options */}
+                <div className="space-y-4">
+                  <a
+                    href="https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-6 bg-gradient-to-br from-white to-neutral-50 rounded-2xl border-2 border-[#D4B78F]/20 hover:border-[#D4B78F] hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D4B78F]/10 rounded-xl flex items-center justify-center group-hover:bg-[#D4B78F]/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-[#D4B78F]" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-medium text-neutral-800 mb-1">Solna</h4>
+                        <p className="text-sm text-neutral-600">Solnavägen 29 H</p>
+                        <p className="text-xs text-neutral-500">171 45, Solna</p>
+                      </div>
+                      <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://www.bokadirekt.se/places/sodermalm-frisor-och-brasiliansk-vaxning-stylingbybrazil-50453"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-6 bg-gradient-to-br from-white to-neutral-50 rounded-2xl border-2 border-[#D4B78F]/20 hover:border-[#D4B78F] hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D4B78F]/10 rounded-xl flex items-center justify-center group-hover:bg-[#D4B78F]/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-[#D4B78F]" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-medium text-neutral-800 mb-1">Södermalm</h4>
+                        <p className="text-sm text-neutral-600">Katarina Bangata 15</p>
+                        <p className="text-xs text-neutral-500">116 39, Södermalm</p>
+                      </div>
+                      <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
