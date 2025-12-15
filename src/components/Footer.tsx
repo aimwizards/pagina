@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-neutral-900 text-white/90">
       {/* Main Footer Content */}
       <div className="container py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Solna Location */}
           <div className="space-y-4">
             <h3 className="text-xl font-light text-[#D4B78F] mb-6">Solna</h3>
@@ -23,32 +23,6 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-[#D4B78F]" />
                 <a href="tel:0760955887" className="hover:text-[#D4B78F] transition-colors">
                   076-095 58 87
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#D4B78F]" />
-                <a href="mailto:info@stylingbybrazil.se" className="hover:text-[#D4B78F] transition-colors">
-                  info@stylingbybrazil.se
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Södermalm Location */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-light text-[#D4B78F] mb-6">Södermalm</h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#D4B78F] mt-1" />
-                <div>
-                  <p>Katarina Bangata 15</p>
-                  <p>116 39, Södermalm</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#D4B78F]" />
-                <a href="tel:0734411255" className="hover:text-[#D4B78F] transition-colors">
-                  073-441 12 55
                 </a>
               </div>
               <div className="flex items-center gap-3">

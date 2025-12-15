@@ -12,7 +12,6 @@ import Behandlingar from './pages/Behandlingar';
 import Priser from './pages/Priser';
 import TeamMemberPage from './pages/TeamMemberPage';
 import ScrollToTop from './components/ScrollToTop';
-import NewsletterPopup from './components/NewsletterPopup';
 import Slingor from './pages/Slingor';
 import Fargning from './pages/Fargning';
 import Kroppsbehandling from './pages/Kroppsbehandling';
@@ -43,7 +42,6 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
-      <NewsletterPopup />
     </div>
   );
 }
