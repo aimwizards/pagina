@@ -164,7 +164,7 @@ export default function TeamSection() {
                           <p className="text-neutral-500">{loc.postal}</p>
                           {loc.name === "Södermalm" && (
                             <p className="text-red-600 font-semibold text-sm mt-2">
-                              OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.
+                              OBS: OBS: Just nu har vi braziliansk vaxning på Götgatan 81 i salong baresso, Ring för mer information för vi har begränsade tider, Boka online nedanför.
                             </p>
                           )}
                         </div>
@@ -343,8 +343,8 @@ export default function TeamSection() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-medium text-neutral-800 mb-1">Södermalm</h4>
-                        <p className="text-sm text-neutral-600">Katarina Bangata 15</p>
-                        <p className="text-xs text-neutral-500">116 39, Södermalm</p>
+                        <p className="text-sm text-neutral-600">Götgatan 81</p>
+                        <p className="text-xs text-neutral-500">116 62, Stockholm</p>
                         <p className="text-xs text-red-600 font-semibold mt-2">
                           OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.
                         </p>
