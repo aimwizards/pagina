@@ -172,8 +172,48 @@ export default function TeamSection() {
                     </div>
                   </div>
 
-                  {/* Info Cards */}
+                  {/* 1. CTA Button (Moved above Opening Hours) */}
+                  <button
+                    onClick={() => setShowLocationPopup(true)}
+                    className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
+                      hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden mb-6"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#E6CCAF] to-[#D4B78F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Calendar className="w-6 h-6 relative z-10" />
+                    <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
+                  </button>
+
+                  {/* 2. Redesigned Contact & Opening Hours Section */}
                   <div className="space-y-4 mb-8">
+                    {/* Redesigned Contact Card - Nice and mentions both locations */}
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/20 hover:border-[#D4B78F]/40 transition-all duration-300 relative overflow-hidden group/contact">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#D4B78F]/5 rounded-full -mr-12 -mt-12 transition-transform group-hover/contact:scale-150 duration-700" />
+                      <div className="flex items-center gap-5 relative z-10">
+                        <div className="bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] p-4 rounded-xl shadow-md">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#D4B78F] mb-1">
+                            Gemensam Bokning
+                          </p>
+                          <a
+                            href={`tel:${salon.phone.replace(/\s/g, '')}`}
+                            className="text-2xl font-bold text-neutral-800 hover:text-[#D4B78F] transition-colors"
+                          >
+                            {salon.phone}
+                          </a>
+                          <div className="flex items-center gap-3 mt-1">
+                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Solna
+                            </span>
+                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Södermalm
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                     {/* Opening Hours Card */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/10 hover:border-[#D4B78F]/30 transition-all duration-300">
                       <div className="flex items-start gap-3 mb-4">
@@ -191,36 +231,7 @@ export default function TeamSection() {
                         ))}
                       </div>
                     </div>
-
-                    {/* Contact Card */}
-                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/10 hover:border-[#D4B78F]/30 transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="bg-[#D4B78F]/10 p-2 rounded-lg">
-                          <Phone className="w-5 h-5 text-[#D4B78F]" />
-                        </div>
-                        <div>
-                          <p className="text-xs text-neutral-500 mb-1">Kontakta oss</p>
-                          <a
-                            href={`tel:${salon.phone.replace(/\s/g, '')}`}
-                            className="text-lg font-semibold text-neutral-800 hover:text-[#D4B78F] transition-colors"
-                          >
-                            {salon.phone}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-
-                  {/* CTA Button */}
-                  <button
-                    onClick={() => setShowLocationPopup(true)}
-                    className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
-                      hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#E6CCAF] to-[#D4B78F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <Calendar className="w-6 h-6 relative z-10" />
-                    <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
-                  </button>
 
                   {/* Trust Badge */}
                   <div className="mt-6 flex flex-col items-center justify-center gap-3">
