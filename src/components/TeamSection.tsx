@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Calendar, Clock, X, Star, Sparkles, ShieldCheck, Zap, Heart } from 'lucide-react';
+import { MapPin, Phone, Calendar, Clock, X, Star, Sparkles, ShieldCheck, Zap, Heart, Percent } from 'lucide-react';
 import TeamMember from './TeamMember';
 import FriskvardBanner from './FriskvardBanner';
 
@@ -151,7 +151,6 @@ export default function TeamSection() {
 
                 {/* Right Side - Content */}
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  {/* Header */}
                   <div className="mb-8">
                     <h3 className="text-4xl font-semibold bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent mb-6 text-center">
                       {salon.name}
@@ -172,7 +171,6 @@ export default function TeamSection() {
                     </div>
                   </div>
 
-                  {/* 1. CTA Button */}
                   <button
                     onClick={() => setShowLocationPopup(true)}
                     className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
@@ -183,7 +181,6 @@ export default function TeamSection() {
                     <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
                   </button>
 
-                  {/* Contact & Hours */}
                   <div className="space-y-4 mb-8">
                     <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/20 hover:border-[#D4B78F]/40 transition-all duration-300 relative overflow-hidden group/contact">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#D4B78F]/5 rounded-full -mr-12 -mt-12 transition-transform group-hover/contact:scale-150 duration-700" />
@@ -201,14 +198,6 @@ export default function TeamSection() {
                           >
                             {salon.phone}
                           </a>
-                          <div className="flex items-center gap-3 mt-1">
-                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Solna
-                            </span>
-                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Södermalm
-                            </span>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -233,10 +222,10 @@ export default function TeamSection() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          </div>
         </div>
 
-        {/* NEW SECTION: Aesthetic Treatments Highlight */}
+        {/* HAYDER SPECIAL HIGHLIGHT SECTION */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -244,34 +233,60 @@ export default function TeamSection() {
           className="max-w-7xl mx-auto mb-24 relative"
         >
           <div className="bg-neutral-900 rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
+            {/* Background Accent */}
             <div className="absolute top-0 right-0 p-8 opacity-10">
               <Sparkles className="w-32 h-32 text-[#D4B78F]" />
             </div>
             
             <div className="grid lg:grid-cols-5 gap-0">
               {/* Profile Image Column */}
-              <div className="lg:col-span-2 relative h-[400px] lg:h-auto">
+              <div className="lg:col-span-2 relative h-[450px] lg:h-auto overflow-hidden">
                 <img 
                   src="https://drhaddebeauty.se/img777.jpg" 
                   alt="Hayder - Estetiska Injektioner" 
                   className="absolute inset-0 w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 />
+                
+                {/* 10% DISCOUNT BADGE */}
+                <motion.div 
+                  initial={{ scale: 0, rotate: -20 }}
+                  whileInView={{ scale: 1, rotate: -12 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", delay: 0.5 }}
+                  className="absolute top-8 left-8 z-20 bg-gradient-to-br from-[#D4B78F] to-[#B08D57] text-neutral-900 p-4 rounded-2xl shadow-2xl border-2 border-white/20 flex flex-col items-center justify-center min-w-[100px]"
+                >
+                  <span className="text-xs font-bold uppercase tracking-tighter leading-none">Just nu</span>
+                  <span className="text-3xl font-black leading-none">10%</span>
+                  <span className="text-[10px] font-bold uppercase">Rabatt</span>
+                </motion.div>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent lg:bg-gradient-to-r"></div>
               </div>
 
               {/* Content Column */}
               <div className="lg:col-span-3 p-8 lg:p-16 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4B78F]/10 border border-[#D4B78F]/20 mb-6 w-fit">
-                  <Sparkles className="w-4 h-4 text-[#D4B78F]" />
-                  <span className="text-[#D4B78F] text-xs font-bold uppercase tracking-widest">Nyhet hos oss</span>
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4B78F]/10 border border-[#D4B78F]/20 w-fit">
+                    <Sparkles className="w-4 h-4 text-[#D4B78F]" />
+                    <span className="text-[#D4B78F] text-xs font-bold uppercase tracking-widest">Nyhet hos oss</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 w-fit">
+                    <Percent className="w-4 h-4 text-red-400" />
+                    <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Introduktionserbjudande</span>
+                  </div>
                 </div>
                 
                 <h3 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight">
-                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Doctor Hayder
+                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Dr. Hayder
                 </h3>
                 
-                <p className="text-neutral-400 text-lg mb-10 leading-relaxed">
-                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Hayder dig att framhäva din naturliga skönhet genom marknadens främsta metoder.
+                <p className="text-neutral-400 text-lg mb-4 leading-relaxed">
+                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Haydar dig att framhäva din naturliga skönhet.
+                </p>
+                
+                <p className="text-[#D4B78F] font-semibold text-lg mb-10 flex items-center gap-2">
+                  <Star className="w-5 h-5 fill-[#D4B78F]" />
+                  Boka nu och få 10% rabatt på din första behandling!
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-10">
@@ -279,7 +294,7 @@ export default function TeamSection() {
                     { title: "Neurotoxin & Fillers", icon: <ShieldCheck className="w-5 h-5" /> },
                     { title: "Polynukleotider (PN)", icon: <Zap className="w-5 h-5" /> },
                     { title: "Skinbooster / Mesoterapi", icon: <Sparkles className="w-5 h-5" /> },
-                    { title: "PRP - Kroppens egna resurser", icon: <Heart className="w-5 h-5" /> }
+                    { title: "PRP - Med kroppens egna resurser", icon: <Heart className="w-5 h-5" /> }
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-neutral-200">
                       <div className="text-[#D4B78F]">{item.icon}</div>
@@ -292,9 +307,9 @@ export default function TeamSection() {
                   href="https://www.bokadirekt.se/places/dr-hadde-beauty-131864"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#D4B78F] hover:bg-[#E6CCAF] text-neutral-900 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-sm"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] hover:scale-[1.03] text-neutral-900 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-sm shadow-xl"
                 >
-                  Upptäck alla behandlingar
+                  Boka med 10% rabatt
                   <Calendar className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
