@@ -164,7 +164,7 @@ export default function TeamSection() {
                           <p className="text-neutral-500">{loc.postal}</p>
                           {loc.name === "Södermalm" && (
                             <p className="text-red-600 font-semibold text-sm mt-2">
-                              OBS: OBS: Just nu har vi braziliansk vaxning på Götgatan 81 i salong baresso, Ring för mer information för vi har begränsade tider, Boka online nedanför.
+                              Just nu har vi braziliansk vaxning på Götgatan 81 i salong baresso, Ring för mer information för vi har begränsade tider, Boka online nedanför.
                             </p>
                           )}
                         </div>
