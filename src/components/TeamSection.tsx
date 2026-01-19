@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  MapPin, Phone, Calendar, Clock, X, Star, 
-  Sparkles, ShieldCheck, Zap, Heart, 
-  ChevronLeft, ChevronRight, CheckCircle2, Percent 
-} from 'lucide-react';
+import { MapPin, Phone, Calendar, Clock, X, Star, Sparkles, ShieldCheck, Zap, Heart } from 'lucide-react';
+import TeamMember from './TeamMember';
 import FriskvardBanner from './FriskvardBanner';
 
 const salons = [
@@ -32,128 +29,205 @@ const salons = [
   }
 ];
 
-const teamMembers = [
+const solnaTeam = [
   {
     name: "Rosangela Lima",
-    title: "Frisör & Hudterapeut",
-    description: "Grundare av Styling by Brazil med över 20 års erfarenhet. Rosangela kombinerar brasiliansk expertis med modern svensk skönhetsvård.",
+    title: "Frisör skönhet hudterapeut",
     specialties: [
+      "Klippning",
+      "Slingor",
+      "Färgning",
+      "Keratin",
+      "Hudterapeut",
+      "Ansiktsbehandling",
       "Braziliansk vaxning",
-      "Avancerad hårvård",
       "Laser hårborttagning",
-      "Kroppsskulptering"
+      "Hårvård",
+      "Hårbehandling",
+      "Kroppsvård",
+      "Reducering av fett",
+      "Reducering massage",
+      "Celluiliter"
     ],
     image: "https://static.wixstatic.com/media/8f7788_5151a69b73984f2997c10d2746c44d86~mv2.jpg/v1/fill/w_403,h_334,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/eb3c684b-99d1-4490-9028-73719b3a6901_edi.jpg",
     location: "Solna",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
+    phone: "076-095 58 87",
+    bookingUrl: "/team/rosangela-lima",
     slug: "rosangela-lima"
-  },
-  {
-    name: "Doctor Haydar",
-    title: "Injektionsspecialist",
-    description: "Certifierad behandlare specialiserad på estetiska injektioner. Haydar fokuserar på naturliga resultat och medicinsk säkerhet genom de senaste teknikerna inom skönhetsvård.",
-    specialties: [
-      "Botox / Neurotoxin",
-      "Fillers & Skinboosters",
-      "Polynukleotider (PN)",
-      "PRP-behandlingar"
-    ],
-    image: "https://drhaddebeauty.se/img777.jpg",
-    location: "Solna",
-    bookingUrl: "https://www.bokadirekt.se/places/dr-hadde-beauty-131864",
-    slug: "haydar"
   },
   {
     name: "July",
     title: "Skönhetsterapeut",
-    description: "Expert på ansiktsbehandlingar och bryn. July brinner för att ge varje kund en personlig och avkopplande upplevelse med fokus på lyster och hälsa.",
     specialties: [
-      "Djupgående ansiktsbehandling",
-      "Lash & Brow Lift",
-      "Professionell vaxning",
-      "Hudanalys"
+      "Ansiktsbehandling",
+      "Hudvård",
+      "Vaxning",
+      "Ögonbryn",
+      "Fransar"
     ],
     image: "https://i.ibb.co/NcYLY5x/photo-2025-08-23-07-53-47-2.jpg",
     location: "Solna",
+    phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
     slug: "july"
+  },
+  {
+    name: "Hayder",
+    title: "Estetiska injektionsbehandlingar",
+    specialties: [
+      "Neurotoxin",
+      "Fillers",
+      "Polynukleotider (PN)",
+      "Skinbooster / Mesoterapi",
+      "PRP - med kroppens egna resurser"
+    ],
+    image: "https://drhaddebeauty.se/img777.jpg",
+    location: "Solna",
+    phone: "076-095 58 87",
+    bookingUrl: "https://www.bokadirekt.se/places/dr-hadde-beauty-131864",
+    slug: "Hayder"
   }
 ];
 
+const sodermalmTeam = [];
+
 export default function TeamSection() {
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
   const [showLocationPopup, setShowLocationPopup] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
-  };
+  const desktopTeam = [...solnaTeam, ...sodermalmTeam];
 
   return (
     <section className="py-24 bg-neutral-50" id="team-section">
       <div className="container">
+        {/* Friskvård Banner */}
         <FriskvardBanner />
 
-        {/* --- SALONGSSEKTION MED VIDEO --- */}
-        <div className="max-w-7xl mx-auto mb-32">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-light mb-6">Våra Salonger</h2>
-          </div>
-          
+        {/* Salons Section */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-light text-center mb-4"
+        >
+          Våra Salonger
+        </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center text-neutral-600 mb-12 max-w-2xl mx-auto"
+        >
+          Besök oss på någon av våra salonger och boka tid hos någon av våra skickliga specialister.
+        </motion.p>
+
+        {/* Salon Cards */}
+        <div className="max-w-7xl mx-auto mb-24">
           {salons.map((salon) => (
             <motion.div
               key={salon.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-neutral-100"
+              className="bg-gradient-to-br from-white via-[#FDFBF8] to-white rounded-3xl shadow-2xl overflow-hidden"
             >
-              <div className="grid lg:grid-cols-2">
-                <div className="relative h-[400px] lg:h-auto bg-neutral-900">
-                  <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-80">
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Left Side - Video */}
+                <div className="relative h-[400px] lg:h-[600px] overflow-hidden bg-neutral-900">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover"
+                  >
                     <source src="https://lh3.googleusercontent.com/ggs/AF1QipPAf3IP9-5gSepBP0TJD2fdlD-abWjdAHwL_DMF=m18" type="video/mp4" />
                   </video>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10"></div>
                 </div>
 
-                <div className="p-8 lg:p-16 flex flex-col justify-center bg-[#FDFBF8]">
-                  <h3 className="text-4xl font-semibold mb-8 bg-gradient-to-r from-[#B08D57] to-[#D4B78F] bg-clip-text text-transparent">
-                    {salon.name}
-                  </h3>
-                  
-                  <div className="grid sm:grid-cols-2 gap-8 mb-10">
-                    {salon.locations.map((loc) => (
-                      <div key={loc.name} className="space-y-1">
-                        <p className="text-[#B08D57] font-bold text-xs uppercase tracking-widest">{loc.name}</p>
-                        <p className="text-neutral-800 font-medium">{loc.address}</p>
-                        <p className="text-neutral-500 text-sm">{loc.postal}</p>
-                        {loc.name === "Södermalm" && (
-                          <p className="text-red-600 text-[10px] font-bold leading-tight mt-2 italic">
-                            OBS: Just nu vaxning på Götgatan 81 (Salong Baresso).
-                          </p>
-                        )}
-                      </div>
-                    ))}
+                {/* Right Side - Content */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  {/* Header */}
+                  <div className="mb-8">
+                    <h3 className="text-4xl font-semibold bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] bg-clip-text text-transparent mb-6 text-center">
+                      {salon.name}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {salon.locations.map((loc) => (
+                        <div key={loc.name} className="text-center">
+                          <p className="text-neutral-800 font-medium text-xl mb-2">{loc.name}</p>
+                          <p className="text-neutral-600">{loc.address}</p>
+                          <p className="text-neutral-500">{loc.postal}</p>
+                          {loc.name === "Södermalm" && (
+                            <p className="text-red-600 font-semibold text-sm mt-2">
+                              OBS: OBS: Just nu har vi braziliansk vaxning på Götgatan 81 i salong baresso, Ring för mer information för vi har begränsade tider, Boka online nedanför.
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
+                  {/* 1. CTA Button */}
                   <button
                     onClick={() => setShowLocationPopup(true)}
-                    className="w-full py-5 bg-neutral-900 text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:bg-[#B08D57] transition-all duration-300 shadow-xl flex items-center justify-center gap-3"
+                    className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
+                      hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden mb-6"
                   >
-                    <Calendar className="w-5 h-5" />
-                    Boka Tid Online
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#E6CCAF] to-[#D4B78F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <Calendar className="w-6 h-6 relative z-10" />
+                    <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
                   </button>
 
-                  <div className="mt-10 pt-8 border-t border-neutral-200 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-[#B08D57]" />
-                      <a href={`tel:${salon.phone.replace(/\s/g, '')}`} className="font-bold text-neutral-800">{salon.phone}</a>
+                  {/* Contact & Hours */}
+                  <div className="space-y-4 mb-8">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/20 hover:border-[#D4B78F]/40 transition-all duration-300 relative overflow-hidden group/contact">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#D4B78F]/5 rounded-full -mr-12 -mt-12 transition-transform group-hover/contact:scale-150 duration-700" />
+                      <div className="flex items-center gap-5 relative z-10">
+                        <div className="bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] p-4 rounded-xl shadow-md">
+                          <Phone className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#D4B78F] mb-1">
+                            Gemensam Bokning
+                          </p>
+                          <a
+                            href={`tel:${salon.phone.replace(/\s/g, '')}`}
+                            className="text-2xl font-bold text-neutral-800 hover:text-[#D4B78F] transition-colors"
+                          >
+                            {salon.phone}
+                          </a>
+                          <div className="flex items-center gap-3 mt-1">
+                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Solna
+                            </span>
+                            <span className="text-[11px] font-medium text-neutral-500 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#D4B78F]"></span> Södermalm
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex gap-1">
-                       {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-[#D4B78F] text-[#D4B78F]" />)}
+
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/10 hover:border-[#D4B78F]/30 transition-all duration-300">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="bg-[#D4B78F]/10 p-2 rounded-lg">
+                          <Clock className="w-5 h-5 text-[#D4B78F]" />
+                        </div>
+                        <h4 className="text-lg font-medium text-neutral-800">Öppettider</h4>
+                      </div>
+                      <div className="space-y-2 ml-11">
+                        {salon.openingHours.map((time) => (
+                          <div key={time.day} className="flex justify-between items-center text-sm">
+                            <span className="text-neutral-600 font-medium">{time.day}</span>
+                            <span className="text-neutral-800 font-semibold">{time.hours}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -162,57 +236,56 @@ export default function TeamSection() {
           ))}
         </div>
 
-        {/* --- HAYDAR BOTOX HIGHLIGHT CARD --- */}
+        {/* NEW SECTION: Aesthetic Treatments Highlight */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-7xl mx-auto mb-32 relative"
+          className="max-w-7xl mx-auto mb-24 relative"
         >
           <div className="bg-neutral-900 rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
-            <div className="grid lg:grid-cols-5">
-              <div className="lg:col-span-2 relative h-[450px] lg:h-auto">
+            <div className="absolute top-0 right-0 p-8 opacity-10">
+              <Sparkles className="w-32 h-32 text-[#D4B78F]" />
+            </div>
+            
+            <div className="grid lg:grid-cols-5 gap-0">
+              {/* Profile Image Column */}
+              <div className="lg:col-span-2 relative h-[400px] lg:h-auto">
                 <img 
                   src="https://drhaddebeauty.se/img777.jpg" 
-                  alt="Haydar Botox" 
-                  className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  alt="Hayder - Estetiska Injektioner" 
+                  className="absolute inset-0 w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 />
-                
-                {/* BOTOX RABATT BADGE */}
-                <motion.div 
-                  initial={{ scale: 0, rotate: -20 }}
-                  whileInView={{ scale: 1, rotate: -12 }}
-                  viewport={{ once: true }}
-                  className="absolute top-10 left-10 z-20 bg-gradient-to-br from-[#D4B78F] to-[#B08D57] text-neutral-900 p-5 rounded-3xl shadow-2xl border-4 border-white/20 flex flex-col items-center justify-center"
-                >
-                  <span className="text-[10px] font-black uppercase tracking-widest leading-none mb-1">Erbjudande</span>
-                  <span className="text-4xl font-black leading-none">10%</span>
-                  <span className="text-xs font-bold uppercase mt-1">på Botox</span>
-                </motion.div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent lg:bg-gradient-to-r" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent lg:bg-gradient-to-r"></div>
               </div>
 
+              {/* Content Column */}
               <div className="lg:col-span-3 p-8 lg:p-16 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4B78F]/10 border border-[#D4B78F]/20 mb-6 w-fit">
-                  <Sparkles className="w-4 h-4 text-[#D4B78F]" />
-                  <span className="text-[#D4B78F] text-xs font-bold uppercase tracking-widest">Introduktionspris</span>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4B78F]/10 border border-[#D4B78F]/20 w-fit">
+                    <Sparkles className="w-4 h-4 text-[#D4B78F]" />
+                    <span className="text-[#D4B78F] text-xs font-bold uppercase tracking-widest">Nyhet hos oss</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 w-fit">
+                    <Star className="w-4 h-4 text-red-500" />
+                    <span className="text-red-500 text-xs font-bold uppercase tracking-widest">10% rabatt på botox</span>
+                  </div>
                 </div>
                 
-                <h3 className="text-3xl lg:text-5xl font-light text-white mb-6">
-                  Expertis inom <span className="text-[#D4B78F] italic">Injektioner</span>
+                <h3 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight">
+                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Dr. Hayder
                 </h3>
                 
-                <p className="text-neutral-400 text-lg mb-8 leading-relaxed">
-                  Doctor Haydar erbjuder nu marknadsledande injektionsbehandlingar med fokus på säkerhet och ett naturligt resultat. Passa på att boka Botox till ett förmånligt pris.
+                <p className="text-neutral-400 text-lg mb-10 leading-relaxed">
+                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Hayder dig att framhäva din naturliga skönhet genom marknadens främsta metoder.
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                <div className="grid md:grid-cols-2 gap-6 mb-10">
                   {[
-                    { title: "Neurotoxin (Botox)", icon: <ShieldCheck className="w-5 h-5" /> },
-                    { title: "Fillers", icon: <Zap className="w-5 h-5" /> },
-                    { title: "Skinboosters", icon: <Sparkles className="w-5 h-5" /> },
-                    { title: "PRP / Mesoterapi", icon: <Heart className="w-5 h-5" /> }
+                    { title: "Neurotoxin & Fillers", icon: <ShieldCheck className="w-5 h-5" /> },
+                    { title: "Polynukleotider (PN)", icon: <Zap className="w-5 h-5" /> },
+                    { title: "Skinbooster / Mesoterapi", icon: <Sparkles className="w-5 h-5" /> },
+                    { title: "PRP - Kroppens egna resurser", icon: <Heart className="w-5 h-5" /> }
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-neutral-200">
                       <div className="text-[#D4B78F]">{item.icon}</div>
@@ -225,94 +298,45 @@ export default function TeamSection() {
                   href="https://www.bokadirekt.se/places/dr-hadde-beauty-131864"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#D4B78F] hover:bg-white text-neutral-900 rounded-2xl transition-all duration-300 font-bold uppercase tracking-widest text-xs"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#D4B78F] hover:bg-[#E6CCAF] text-neutral-900 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-sm"
                 >
-                  Boka med 10% rabatt
-                  <Calendar className="w-4 h-4" />
+                  Upptäck alla behandlingar
+                  <Calendar className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* --- TEAM SLIDESHOW (DEN GAMLA DESIGNEN) --- */}
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-light mb-4">Vårt Team</h2>
-            <p className="text-neutral-500">Möt våra specialister på Styling by Brazil</p>
-          </div>
+        {/* Team Members Section */}
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-light text-center mb-4"
+        >
+          Vårt Team
+        </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center text-neutral-600 mb-12 max-w-2xl mx-auto"
+        >
+          Möt våra erfarna specialister som är här för att ta hand om dig
+        </motion.p>
 
-          <div className="relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                className="bg-neutral-900 rounded-[3rem] overflow-hidden shadow-2xl border border-white/5"
-              >
-                <div className="grid lg:grid-cols-5">
-                  <div className="lg:col-span-2 relative h-[450px] lg:h-[650px]">
-                    <img 
-                      src={teamMembers[currentIndex].image} 
-                      alt={teamMembers[currentIndex].name}
-                      className="absolute inset-0 w-full h-full object-cover grayscale"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 lg:bg-gradient-to-r via-transparent" />
-                  </div>
-
-                  <div className="lg:col-span-3 p-8 lg:p-20 flex flex-col justify-center">
-                    <div className="mb-6">
-                      <h3 className="text-5xl font-light text-white mb-2 italic">{teamMembers[currentIndex].name}</h3>
-                      <p className="text-[#D4B78F] text-xl font-medium uppercase tracking-widest">{teamMembers[currentIndex].title}</p>
-                    </div>
-
-                    <p className="text-neutral-400 text-lg leading-relaxed mb-10">
-                      {teamMembers[currentIndex].description}
-                    </p>
-
-                    <div className="grid sm:grid-cols-2 gap-4 mb-12">
-                      {teamMembers[currentIndex].specialties.map((spec, i) => (
-                        <div key={i} className="flex items-center gap-3 text-neutral-200 bg-white/5 p-4 rounded-2xl border border-white/5">
-                          <CheckCircle2 className="w-5 h-5 text-[#D4B78F]" />
-                          <span className="text-sm font-medium">{spec}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a 
-                      href={teamMembers[currentIndex].bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#D4B78F] hover:bg-white text-neutral-900 rounded-2xl transition-all duration-300 font-bold uppercase tracking-widest text-xs"
-                    >
-                      Boka Tid
-                      <Calendar className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Slider Navigation */}
-            <div className="flex justify-center lg:justify-end items-center gap-4 mt-12">
-              <button onClick={prevSlide} className="w-14 h-14 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-neutral-900 hover:text-white transition-all">
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <div className="flex gap-2">
-                {teamMembers.map((_, i) => (
-                  <button key={i} onClick={() => setCurrentIndex(i)} className={`h-1.5 rounded-full transition-all ${currentIndex === i ? 'w-8 bg-[#D4B78F]' : 'w-2 bg-neutral-300'}`} />
-                ))}
-              </div>
-              <button onClick={nextSlide} className="w-14 h-14 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-neutral-900 hover:text-white transition-all">
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {desktopTeam.map((member) => (
+            <TeamMember key={member.slug} {...member} />
+          ))}
         </div>
       </div>
 
-      {/* POPUP FÖR BOKNING */}
+      {/* Location Selection Popup */}
       <AnimatePresence>
         {showLocationPopup && (
           <>
@@ -321,30 +345,66 @@ export default function TeamSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowLocationPopup(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100]"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
             />
+
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 40 }}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 40 }}
-              className="fixed inset-0 z-[101] flex items-center justify-center p-4 pointer-events-none"
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
-              <div className="bg-white rounded-[2.5rem] shadow-2xl max-w-md w-full p-10 relative pointer-events-auto">
-                <button onClick={() => setShowLocationPopup(false)} className="absolute top-6 right-6 p-2">
-                  <X className="w-6 h-6 text-neutral-400" />
+              <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative">
+                <button
+                  onClick={() => setShowLocationPopup(false)}
+                  className="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors"
+                >
+                  <X className="w-6 h-6 text-neutral-600" />
                 </button>
+
                 <div className="text-center mb-8">
-                  <MapPin className="w-10 h-10 text-[#B08D57] mx-auto mb-4" />
-                  <h3 className="text-3xl font-light">Välj Salong</h3>
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] rounded-full mb-4">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-light mb-2">Välj Salong</h3>
+                  <p className="text-neutral-600">Vilken av våra salonger vill du boka hos?</p>
                 </div>
+
                 <div className="space-y-4">
-                  <a href="https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888" target="_blank" className="block p-6 bg-[#FDFBF8] rounded-3xl hover:border-[#D4B78F] border-2 border-transparent transition-all">
-                    <p className="font-bold text-lg">Solna</p>
-                    <p className="text-sm text-neutral-500">Solnavägen 29 H</p>
+                  <a
+                    href="https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-6 bg-gradient-to-br from-white to-neutral-50 rounded-2xl border-2 border-[#D4B78F]/20 hover:border-[#D4B78F] hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D4B78F]/10 rounded-xl flex items-center justify-center group-hover:bg-[#D4B78F]/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-[#D4B78F]" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-medium text-neutral-800 mb-1">Solna</h4>
+                        <p className="text-sm text-neutral-600">Solnavägen 29 H</p>
+                      </div>
+                      <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
+                    </div>
                   </a>
-                  <a href="https://www.bokadirekt.se/places/sodermalm-frisor-och-brasiliansk-vaxning-stylingbybrazil-50453" target="_blank" className="block p-6 bg-[#FDFBF8] rounded-3xl hover:border-[#D4B78F] border-2 border-transparent transition-all">
-                    <p className="font-bold text-lg">Södermalm</p>
-                    <p className="text-sm text-neutral-500">Götgatan 81</p>
+
+                  <a
+                    href="https://www.bokadirekt.se/places/sodermalm-frisor-och-brasiliansk-vaxning-stylingbybrazil-50453"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-6 bg-gradient-to-br from-white to-neutral-50 rounded-2xl border-2 border-[#D4B78F]/20 hover:border-[#D4B78F] hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#D4B78F]/10 rounded-xl flex items-center justify-center group-hover:bg-[#D4B78F]/20 transition-colors">
+                        <MapPin className="w-6 h-6 text-[#D4B78F]" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-medium text-neutral-800 mb-1">Södermalm</h4>
+                        <p className="text-sm text-neutral-600">Götgatan 81</p>
+                      </div>
+                      <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
+                    </div>
                   </a>
                 </div>
               </div>
