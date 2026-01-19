@@ -43,7 +43,7 @@ export default function Header() {
             <div className="container mx-auto flex items-center justify-between">
               <div className="flex items-center gap-2 text-sm font-semibold">
                 <MapPin className="w-4 h-4" />
-                <span>OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.</span>
+                <span>OBS: Just nu har vi vaxning på götgatan 81 i salong baresso, Ring för mer information för vi har begränsade tider. Boka online nedanför.</span>
               </div>
               <button
                 onClick={() => setShowAnnouncement(false)}
