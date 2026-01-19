@@ -72,23 +72,6 @@ const solnaTeam = [
     slug: "july"
   },
   {
-    name: "Renata",
-    title: "Nagel- och fotterapeut",
-    specialties: [
-      "Manikyr",
-      "Pedikyr",
-      "Gellack",
-      "Nagelförlängning",
-      "Handvård",
-      "Fotvård"
-    ],
-    image: "https://i.ibb.co/HfqMjQHP/photo-2025-08-23-07-53-47.jpg",
-    location: "Solna",
-    phone: "076-095 58 87",
-    bookingUrl: "https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888",
-    slug: "renata"
-  },
-  {
     name: "Haydar",
     title: "Estetiska injektionsbehandlingar",
     specialties: [
