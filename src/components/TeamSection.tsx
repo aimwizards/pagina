@@ -72,7 +72,7 @@ const solnaTeam = [
     slug: "july"
   },
   {
-    name: "Haydar",
+    name: "Hayder",
     title: "Estetiska injektionsbehandlingar",
     specialties: [
       "Neurotoxin",
@@ -85,7 +85,7 @@ const solnaTeam = [
     location: "Solna",
     phone: "076-095 58 87",
     bookingUrl: "https://www.bokadirekt.se/places/dr-hadde-beauty-131864",
-    slug: "haydar"
+    slug: "Hayder"
   }
 ];
 
@@ -253,7 +253,7 @@ export default function TeamSection() {
               <div className="lg:col-span-2 relative h-[400px] lg:h-auto">
                 <img 
                   src="https://drhaddebeauty.se/img777.jpg" 
-                  alt="Haydar - Estetiska Injektioner" 
+                  alt="Hayder - Estetiska Injektioner" 
                   className="absolute inset-0 w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent lg:bg-gradient-to-r"></div>
@@ -267,11 +267,11 @@ export default function TeamSection() {
                 </div>
                 
                 <h3 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight">
-                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Haydar
+                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Doctor Hayder
                 </h3>
                 
                 <p className="text-neutral-400 text-lg mb-10 leading-relaxed">
-                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Haydar dig att framhäva din naturliga skönhet genom marknadens främsta metoder.
+                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Hayder dig att framhäva din naturliga skönhet genom marknadens främsta metoder.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-10">
