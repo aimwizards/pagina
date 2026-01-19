@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Calendar, Clock, X, Star } from 'lucide-react';
+import { MapPin, Phone, Calendar, Clock, X, Star, Sparkles, ShieldCheck, Zap, Heart } from 'lucide-react';
 import TeamMember from './TeamMember';
 import FriskvardBanner from './FriskvardBanner';
 
@@ -172,7 +172,7 @@ export default function TeamSection() {
                     </div>
                   </div>
 
-                  {/* 1. CTA Button (Moved above Opening Hours) */}
+                  {/* 1. CTA Button */}
                   <button
                     onClick={() => setShowLocationPopup(true)}
                     className="group relative flex items-center justify-center gap-3 w-full py-5 bg-gradient-to-r from-[#D4B78F] to-[#E6CCAF] text-white rounded-2xl
@@ -183,9 +183,8 @@ export default function TeamSection() {
                     <span className="text-xl font-medium relative z-10">Boka i Solna eller Södermalm</span>
                   </button>
 
-                  {/* 2. Redesigned Contact & Opening Hours Section */}
+                  {/* Contact & Hours */}
                   <div className="space-y-4 mb-8">
-                    {/* Redesigned Contact Card - Nice and mentions both locations */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/20 hover:border-[#D4B78F]/40 transition-all duration-300 relative overflow-hidden group/contact">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-[#D4B78F]/5 rounded-full -mr-12 -mt-12 transition-transform group-hover/contact:scale-150 duration-700" />
                       <div className="flex items-center gap-5 relative z-10">
@@ -214,7 +213,6 @@ export default function TeamSection() {
                       </div>
                     </div>
 
-                    {/* Opening Hours Card */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#D4B78F]/10 hover:border-[#D4B78F]/30 transition-all duration-300">
                       <div className="flex items-start gap-3 mb-4">
                         <div className="bg-[#D4B78F]/10 p-2 rounded-lg">
@@ -232,28 +230,77 @@ export default function TeamSection() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Trust Badge */}
-                  <div className="mt-6 flex flex-col items-center justify-center gap-3">
-                    <div className="flex gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-[#D4B78F] text-[#D4B78F]" />
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-neutral-600">
-                      <div className="flex -space-x-2">
-                        <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
-                        <div className="w-8 h-8 rounded-full bg-[#E6CCAF] border-2 border-white"></div>
-                        <div className="w-8 h-8 rounded-full bg-[#D4B78F] border-2 border-white"></div>
-                      </div>
-                      <span className="font-medium">Över 2000+ nöjda kunder</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* NEW SECTION: Aesthetic Treatments Highlight */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto mb-24 relative"
+        >
+          <div className="bg-neutral-900 rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
+            <div className="absolute top-0 right-0 p-8 opacity-10">
+              <Sparkles className="w-32 h-32 text-[#D4B78F]" />
+            </div>
+            
+            <div className="grid lg:grid-cols-5 gap-0">
+              {/* Profile Image Column */}
+              <div className="lg:col-span-2 relative h-[400px] lg:h-auto">
+                <img 
+                  src="https://drhaddebeauty.se/img777.jpg" 
+                  alt="Haydar - Estetiska Injektioner" 
+                  className="absolute inset-0 w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+              </div>
+
+              {/* Content Column */}
+              <div className="lg:col-span-3 p-8 lg:p-16 flex flex-col justify-center">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4B78F]/10 border border-[#D4B78F]/20 mb-6 w-fit">
+                  <Sparkles className="w-4 h-4 text-[#D4B78F]" />
+                  <span className="text-[#D4B78F] text-xs font-bold uppercase tracking-widest">Nyhet hos oss</span>
+                </div>
+                
+                <h3 className="text-3xl lg:text-5xl font-light text-white mb-6 leading-tight">
+                  Avancerade <span className="text-[#D4B78F] italic">Injektionsbehandlingar</span> av Haydar
+                </h3>
+                
+                <p className="text-neutral-400 text-lg mb-10 leading-relaxed">
+                  Vi är stolta över att presentera våra nya estetiska behandlingar. Med precision och medicinsk expertis hjälper Haydar dig att framhäva din naturliga skönhet genom marknadens främsta metoder.
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-10">
+                  {[
+                    { title: "Neurotoxin & Fillers", icon: <ShieldCheck className="w-5 h-5" /> },
+                    { title: "Polynukleotider (PN)", icon: <Zap className="w-5 h-5" /> },
+                    { title: "Skinbooster / Mesoterapi", icon: <Sparkles className="w-5 h-5" /> },
+                    { title: "PRP - Kroppens egna resurser", icon: <Heart className="w-5 h-5" /> }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-neutral-200">
+                      <div className="text-[#D4B78F]">{item.icon}</div>
+                      <span className="text-sm font-medium tracking-wide">{item.title}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a 
+                  href="https://www.bokadirekt.se/places/dr-hadde-beauty-131864"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#D4B78F] hover:bg-[#E6CCAF] text-neutral-900 rounded-full transition-all duration-300 font-bold uppercase tracking-widest text-sm"
+                >
+                  Upptäck alla behandlingar
+                  <Calendar className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Team Members Section */}
         <motion.h2 
@@ -287,7 +334,6 @@ export default function TeamSection() {
       <AnimatePresence>
         {showLocationPopup && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -296,7 +342,6 @@ export default function TeamSection() {
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
             />
 
-            {/* Popup */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -304,7 +349,6 @@ export default function TeamSection() {
               className="fixed inset-0 z-50 flex items-center justify-center p-4"
             >
               <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative">
-                {/* Close Button */}
                 <button
                   onClick={() => setShowLocationPopup(false)}
                   className="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-100 transition-colors"
@@ -312,7 +356,6 @@ export default function TeamSection() {
                   <X className="w-6 h-6 text-neutral-600" />
                 </button>
 
-                {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#D4B78F] to-[#E6CCAF] rounded-full mb-4">
                     <MapPin className="w-8 h-8 text-white" />
@@ -321,7 +364,6 @@ export default function TeamSection() {
                   <p className="text-neutral-600">Vilken av våra salonger vill du boka hos?</p>
                 </div>
 
-                {/* Location Options */}
                 <div className="space-y-4">
                   <a
                     href="https://www.bokadirekt.se/places/frisor-solna-styling-by-brazil-klinink-58888"
@@ -336,7 +378,6 @@ export default function TeamSection() {
                       <div className="flex-1">
                         <h4 className="text-lg font-medium text-neutral-800 mb-1">Solna</h4>
                         <p className="text-sm text-neutral-600">Solnavägen 29 H</p>
-                        <p className="text-xs text-neutral-500">171 45, Solna</p>
                       </div>
                       <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
                     </div>
@@ -355,10 +396,6 @@ export default function TeamSection() {
                       <div className="flex-1">
                         <h4 className="text-lg font-medium text-neutral-800 mb-1">Södermalm</h4>
                         <p className="text-sm text-neutral-600">Götgatan 81</p>
-                        <p className="text-xs text-neutral-500">116 62, Stockholm</p>
-                        <p className="text-xs text-red-600 font-semibold mt-2">
-                          OBS: Från första januari är vi inte på Katarina Bangata 15. Vi återkommer snart med en ny adress i Södermalm där vi kommer erbjuda vaxning och frisör.
-                        </p>
                       </div>
                       <Calendar className="w-5 h-5 text-[#D4B78F] group-hover:scale-110 transition-transform" />
                     </div>
