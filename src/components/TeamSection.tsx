@@ -56,14 +56,10 @@ const solnaTeam = [
     slug: "rosangela-lima"
   },
   {
-    name: "July",
+    name: "Xhuli",
     title: "Skönhetsterapeut",
     specialties: [
-      "Ansiktsbehandling",
-      "Hudvård",
-      "Vaxning",
-      "Ögonbryn",
-      "Fransar"
+     
     ],
     image: "https://i.ibb.co/NcYLY5x/photo-2025-08-23-07-53-47-2.jpg",
     location: "Solna",
