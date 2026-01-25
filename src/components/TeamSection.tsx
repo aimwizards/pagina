@@ -59,6 +59,7 @@ const solnaTeam = [
     name: "July",
     title: "Skönhetsterapeut",
     specialties: [
+       "Vaxnings speciallist",
      
     ],
     image: "https://i.ibb.co/NcYLY5x/photo-2025-08-23-07-53-47-2.jpg",
