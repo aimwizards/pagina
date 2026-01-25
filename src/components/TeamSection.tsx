@@ -56,7 +56,7 @@ const solnaTeam = [
     slug: "rosangela-lima"
   },
   {
-    name: "Xhuli",
+    name: "July",
     title: "Skönhetsterapeut",
     specialties: [
      
