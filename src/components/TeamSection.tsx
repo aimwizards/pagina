@@ -15,8 +15,8 @@ const salons = [
       },
       {
         name: "Södermalm",
-        address: "Götgatan 81",
-        postal: "116 62, Stockholm"
+        address: "blekingegatan 57",
+        postal: "118 56, Stockholm"
       }
     ],
     phone: "076-095 58 87",
